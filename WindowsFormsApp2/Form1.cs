@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,22 +20,39 @@ namespace WindowsFormsApp2
 
         private void loginForm_Load(object sender, EventArgs e)
         {
-            mainPic.Image = Image.FromFile("../Images/User.jpg");
+            //mainPic.Image = Image.FromFile("../Images/Users.jpg");
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void loginBtn_Click(object sender, EventArgs e)
         {
+            bool valid = checkAccount(usernameTb.Text, passwordTb.Text);
+           
+            if (valid)
+            {
+                MessageBox.Show("Wait for next week");
 
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password");
+
+            }
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        public Boolean checkAccount(string username, string password)
         {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            myDB db = new myDB();
+            db.openConnection();
+            SqlCommand command = new SqlCommand("SELECT * FROM users WHERE username = @User AND password =@Pass", db.getConnection());
+            command.Parameters.Add("@User", SqlDbType.VarChar).Value = usernameTb.Text;
+            command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = passwordTb.Text;
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                db.closeConnection();
+                return true;
+            }
+            db.closeConnection();
+            return false;
         }
     }
 }

@@ -1,0 +1,11 @@
+F:\Window\Window\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+F:\Window\Window\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+F:\Window\Window\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+F:\Window\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojAssemblyReference.cache
+F:\Window\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.loginForm.resources
+F:\Window\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+F:\Window\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+F:\Window\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+F:\Window\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+F:\Window\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+F:\Window\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.errorForm.resources
