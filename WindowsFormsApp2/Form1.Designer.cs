@@ -45,6 +45,7 @@
             this.mainPic.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.mainPic.Name = "mainPic";
             this.mainPic.Size = new System.Drawing.Size(352, 310);
+            this.mainPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mainPic.TabIndex = 0;
             this.mainPic.TabStop = false;
             // 
@@ -83,22 +84,27 @@
             // 
             // usernameTb
             // 
-            this.usernameTb.Location = new System.Drawing.Point(547, 656);
+            this.usernameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTb.Location = new System.Drawing.Point(497, 641);
             this.usernameTb.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.usernameTb.Multiline = true;
             this.usernameTb.Name = "usernameTb";
-            this.usernameTb.Size = new System.Drawing.Size(527, 38);
+            this.usernameTb.Size = new System.Drawing.Size(809, 93);
             this.usernameTb.TabIndex = 4;
             // 
             // passwordTb
             // 
-            this.passwordTb.Location = new System.Drawing.Point(547, 806);
+            this.passwordTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTb.Location = new System.Drawing.Point(497, 791);
             this.passwordTb.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.passwordTb.Multiline = true;
             this.passwordTb.Name = "passwordTb";
-            this.passwordTb.Size = new System.Drawing.Size(527, 38);
+            this.passwordTb.Size = new System.Drawing.Size(809, 93);
             this.passwordTb.TabIndex = 5;
             // 
             // cancelBtn
             // 
+            this.cancelBtn.BackColor = System.Drawing.Color.Red;
             this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.Location = new System.Drawing.Point(123, 1047);
             this.cancelBtn.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
@@ -106,10 +112,12 @@
             this.cancelBtn.Size = new System.Drawing.Size(533, 143);
             this.cancelBtn.TabIndex = 6;
             this.cancelBtn.Text = "Cancel";
-            this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // loginBtn
             // 
+            this.loginBtn.BackColor = System.Drawing.Color.Chartreuse;
             this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.Location = new System.Drawing.Point(808, 1044);
             this.loginBtn.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
@@ -117,14 +125,14 @@
             this.loginBtn.Size = new System.Drawing.Size(533, 143);
             this.loginBtn.TabIndex = 7;
             this.loginBtn.Text = "Login";
-            this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.UseVisualStyleBackColor = false;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1464, 1259);
+            this.ClientSize = new System.Drawing.Size(1464, 1504);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.passwordTb);

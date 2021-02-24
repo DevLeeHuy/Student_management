@@ -9,3 +9,5 @@ F:\Window\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileI
 F:\Window\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 F:\Window\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 F:\Window\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.errorForm.resources
+F:\Window\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmInheritance.resources
+F:\Window\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.dinhDangForm.resources

@@ -20,21 +20,25 @@ namespace WindowsFormsApp2
 
         private void loginForm_Load(object sender, EventArgs e)
         {
-            //mainPic.Image = Image.FromFile("../Images/Users.jpg");
+           mainPic.Image = Image.FromFile("F:\\Window\\Window\\WindowsFormsApp2\\Images\\User.jpg");
         }
 
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void loginBtn_Click(object sender, EventArgs e)
         {
             bool valid = checkAccount(usernameTb.Text, passwordTb.Text);
            
             if (valid)
             {
-                MessageBox.Show("Wait for next week");
+                MessageBox.Show("Wait for next week","SUCCESSFUL",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
             }
             else
             {
-                MessageBox.Show("Invalid username or password");
+                MessageBox.Show("Invalid username or password","FAILED", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -54,5 +58,7 @@ namespace WindowsFormsApp2
             db.closeConnection();
             return false;
         }
+
+       
     }
 }

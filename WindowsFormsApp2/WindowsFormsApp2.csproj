@@ -46,11 +46,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dinhDangForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dinhDangForm.Designer.cs">
+      <DependentUpon>dinhDangForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="errorForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="errorForm.Designer.cs">
       <DependentUpon>errorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6.Designer.cs">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInheritance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInheritance.Designer.cs">
+      <DependentUpon>frmInheritance.cs</DependentUpon>
     </Compile>
     <Compile Include="myDB.cs" />
     <Compile Include="Form1.cs">
@@ -66,11 +108,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>usersDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="dinhDangForm.resx">
+      <DependentUpon>dinhDangForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="errorForm.resx">
       <DependentUpon>errorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInheritance.resx">
+      <DependentUpon>frmInheritance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
