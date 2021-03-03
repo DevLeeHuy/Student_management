@@ -20,7 +20,6 @@ namespace WindowsFormsApp2
 
         private void loginForm_Load(object sender, EventArgs e)
         {
-           mainPic.Image = Image.FromFile("F:\\Window\\Window\\WindowsFormsApp2\\Images\\User.jpg");
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
@@ -33,8 +32,9 @@ namespace WindowsFormsApp2
            
             if (valid)
             {
-                MessageBox.Show("Wait for next week","SUCCESSFUL",MessageBoxButtons.OK,MessageBoxIcon.Information);
-
+                Form main = new mainForm();
+                this.Hide();
+                main.ShowDialog();
             }
             else
             {
@@ -59,6 +59,9 @@ namespace WindowsFormsApp2
             return false;
         }
 
-       
+        private void mainPic_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
