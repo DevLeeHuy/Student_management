@@ -1,13 +1,14 @@
-create database QuanLySinhVien;
-use QuanLySinhVien;
+create database StdManagement;
+use StdManagement;
 create table users(
-	id varchar(10),
+	id int not null identity(1,1) primary key,
 	username varchar(20),
 	password varchar(20)
 );
 
-insert into users 
-values('001','lehuy','1234');
+insert into users(username, password) 
+values('lehuy','1234');
+select * from users;
 
 create table student(
 	id nvarchar(100) NOT NULL,
@@ -17,8 +18,7 @@ create table student(
 	gender nvarchar(100)  NOT NULL,
 	phone nvarchar(100),
 	address nvarchar(100),
-	img nvarchar(200),
+	img image,
 	PRIMARY KEY (id)
-);
+	);
  select * from student;
- truncate table student;

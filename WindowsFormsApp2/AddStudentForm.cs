@@ -44,8 +44,9 @@ namespace WindowsFormsApp2
                     string address = txtAddress.Text;
 
 
-                    File.Copy(Avatar.ImageLocation, Path.Combine(Application.StartupPath + "\\Images\\", Path.GetFileName(Avatar.ImageLocation)), true);
-                    string pic = Application.StartupPath + "\\Images\\" + Path.GetFileName(Avatar.ImageLocation);
+                    //File.Copy(Avatar.ImageLocation, Path.Combine(Application.StartupPath + "\\Images\\", Path.GetFileName(Avatar.ImageLocation)), true);
+                    MemoryStream pic = new MemoryStream();
+                    Avatar.Image.Save(pic, Avatar.Image.RawFormat);
                     RadioButton ckb = null;
                     foreach (RadioButton item in genderBox.Controls)
                     {

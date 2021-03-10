@@ -13,6 +13,15 @@ namespace WindowsFormsApp2
     {
         static myDB db = new myDB();
         
+        public static DataTable getListStudent()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM student",db.getConnection());
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
         public static bool insertStudent(student stu)
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO student VALUES(@id, @ln, @fn, @birth, @gender, @phone, @address,@img)",db.getConnection());
@@ -23,7 +32,7 @@ namespace WindowsFormsApp2
             cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = stu.Gender;
             cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = stu.Phone;
             cmd.Parameters.Add("@address", SqlDbType.VarChar).Value = stu.Address;
-            cmd.Parameters.Add("@img", SqlDbType.VarChar).Value = stu.Img;
+            cmd.Parameters.Add("@img", SqlDbType.Image).Value = stu.Img.ToArray();
             db.openConnection();
             if(cmd.ExecuteNonQuery() == 1)
             {
@@ -34,6 +43,31 @@ namespace WindowsFormsApp2
             {
                 db.closeConnection();
                 return false;
+            }
+        }
+
+        public static DataTable Search(string value)
+        {
+            try
+            {
+                db.openConnection();
+                string sql = "SELECT * FROM student WHERE id LIKE '" + value + "%'"; 
+               // cmd.Parameters.Add("@value", SqlDbType.VarChar).Value = value;
+                
+                SqlDataAdapter da = new SqlDataAdapter(sql,db.getConnection());
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+               
+                return dt;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return null;
+            }
+            finally
+            {
+                db.closeConnection();
             }
         }
     }

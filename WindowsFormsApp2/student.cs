@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace WindowsFormsApp2
     {
 
         public student() { }
-        public student(string id,string fname,string lname,string birth,string phone,string address,string gender,string Pic)
+        public student(string id,string fname,string lname,string birth,string phone,string address,string gender, MemoryStream Pic)
         {
             this.id = id;
             this.firstName = fname;
@@ -43,7 +44,7 @@ namespace WindowsFormsApp2
         private string address;
 
 
-        private string img;
+        private MemoryStream img;
 
         public string Id { get => id; set => id = value; }
         public string LastName { get => lastName; set => lastName = value; }
@@ -52,6 +53,6 @@ namespace WindowsFormsApp2
         public string Gender { get => gender; set => gender = value; }
         public string Phone { get => phone; set => phone = value; }
         public string Address { get => address; set => address = value; }
-        public string Img { get => img; set => img = value; }
+        public MemoryStream Img { get => img; set => img = value; }
     }
 }
