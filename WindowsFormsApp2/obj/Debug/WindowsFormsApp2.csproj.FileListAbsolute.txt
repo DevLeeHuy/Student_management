@@ -42,3 +42,6 @@ C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\
 C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.updateStdFrm.resources
+C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmStatistic.resources
+C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.frmPrint.resources
+C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.ResolveComReference.cache

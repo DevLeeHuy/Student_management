@@ -5,7 +5,36 @@ create table users(
 	username varchar(20),
 	password varchar(20)
 );
-
+INSERT	INTO dbo.users
+(
+    username,
+    password
+)
+VALUES
+(   '', -- username - varchar(20)
+    ''  -- password - varchar(20)
+    )
+INSERT INTO dbo.student
+(
+    id,
+    lname,
+    fname,
+    BirthDate,
+    gender,
+    phone,
+    address,
+    img
+)
+VALUES
+(   N'', -- id - nvarchar(100)
+    N'', -- lname - nvarchar(100)
+    N'', -- fname - nvarchar(100)
+    N'', -- BirthDate - nvarchar(100)
+    N'', -- gender - nvarchar(100)
+    N'', -- phone - nvarchar(100)
+    N'', -- address - nvarchar(100)
+    NULL -- img - image
+    )
 insert into users(username, password) 
 values('lehuy','1234');
 select * from users;
@@ -22,3 +51,7 @@ create table student(
 	PRIMARY KEY (id)
 	);
  select * from student;
+ TRUNCATE TABLE dbo.student
+
+ ALTER TABLE dbo.student
+ ALTER COLUMN BirthDate DATETIME;

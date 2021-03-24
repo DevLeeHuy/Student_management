@@ -12,7 +12,7 @@ namespace WindowsFormsApp2
     {
 
         public student() { }
-        public student(string id,string fname,string lname,string birth,string phone,string address,string gender, MemoryStream Pic)
+        public student(string id,string fname,string lname,DateTime birth,string phone,string address,string gender, MemoryStream Pic)
         {
             this.id = id;
             this.firstName = fname;
@@ -32,7 +32,7 @@ namespace WindowsFormsApp2
         private string firstName;
 
 
-        private string birthDate;
+        private DateTime birthDate;
 
 
         private string gender;
@@ -49,7 +49,7 @@ namespace WindowsFormsApp2
         public string Id { get => id; set => id = value; }
         public string LastName { get => lastName; set => lastName = value; }
         public string FirstName { get => firstName; set => firstName = value; }
-        public string BirthDate { get => birthDate; set => birthDate = value; }
+        public DateTime BirthDate { get => birthDate; set => birthDate = value; }
         public string Gender { get => gender; set => gender = value; }
         public string Phone { get => phone; set => phone = value; }
         public string Address { get => address; set => address = value; }

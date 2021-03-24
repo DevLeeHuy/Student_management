@@ -20,6 +20,9 @@ namespace WindowsFormsApp2
 
         private void loginForm_Load(object sender, EventArgs e)
         {
+
+            
+
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
@@ -39,7 +42,8 @@ namespace WindowsFormsApp2
             else
             {
                 MessageBox.Show("Invalid username or password","FAILED", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                errorUName.SetError(usernameTb, "Please input your username");
+                errorPass.SetError(passwordTb, "Please input your password");
             }
         }
         public Boolean checkAccount(string username, string password)

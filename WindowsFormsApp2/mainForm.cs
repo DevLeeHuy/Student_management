@@ -23,6 +23,7 @@ namespace WindowsFormsApp2
         {
             Form addStudent = new AddStudentForm();
             addStudent.ShowDialog();
+
         }
 
         private void studentListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,6 +61,25 @@ namespace WindowsFormsApp2
         {
             Form edit = new updateStdFrm();
             edit.ShowDialog();
+        }
+
+        private void gvListStudent_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            updateStdFrm edit = new updateStdFrm(gvListStudent.CurrentRow.Cells[0].Value.ToString());    
+            
+            edit.ShowDialog();
+        }
+
+        private void staticsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form statistic = new frmStatistic();
+            statistic.Show();
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form print = new frmPrint();
+            print.Show();
         }
     }
 }
