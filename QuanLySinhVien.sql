@@ -55,3 +55,24 @@ create table student(
 
  ALTER TABLE dbo.student
  ALTER COLUMN BirthDate DATETIME;
+
+ CREATE TABLE course(
+	id INT  PRIMARY KEY,
+	label NVARCHAR(50) NOT NULL,
+	period int ,
+	description TEXT
+ )
+ GO
+ DROP TABLE course
+GO
+INSERT INTO dbo.course
+(
+   
+    label,
+    description
+)
+VALUES
+(   
+    N'window programming', -- label - nvarchar(50)
+    'New course'   -- description - text
+    )

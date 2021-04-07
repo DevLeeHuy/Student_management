@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp2.Forms.Courses;
 
 namespace WindowsFormsApp2
 {
@@ -16,7 +17,7 @@ namespace WindowsFormsApp2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new loginForm());
+            Application.Run(new EditCourseFrm());
         }
     }
 }

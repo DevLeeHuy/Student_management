@@ -3,43 +3,57 @@
   <Class Name="WindowsFormsApp2.loginForm" Collapsed="true">
     <Position X="9.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAACAAABEAAACQAEACIAYAAAAAAAYAAAAAAEA=</HashCode>
-      <FileName>frmDangNhap.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="WindowsFormsApp2.mainForm" Collapsed="true">
-    <Position X="6.75" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AQFAAAAAAGAAAAAAAACAAABCAAAAAJAAEAAAAAAAIAQ=</HashCode>
-      <FileName>mainForm.cs</FileName>
+      <HashCode>AACAAQAAACAAABEAAACQAEACIBYAAAAAAIYAAAAAAEA=</HashCode>
+      <FileName>Forms\frmDangNhap.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.myDB" Collapsed="true">
-    <Position X="3.75" Y="2.5" Width="1.5" />
+    <Position X="1" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAAAAAAAABAQAAAAAQAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>myDB.cs</FileName>
+      <FileName>DAO\myDB.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.AddStudentForm" Collapsed="true">
     <Position X="6.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAUBAAQAACACABAFAByAAAACAQAAIAAgAAAgAAAAAAA=</HashCode>
-      <FileName>AddStudentForm.cs</FileName>
+      <FileName>Forms\AddStudentForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.student" Collapsed="true">
     <Position X="3.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAEAQAABAEACABAAAgAQAAAIAAAAiAAAAKAAAAgg=</HashCode>
-      <FileName>student.cs</FileName>
+      <FileName>model\student.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.studentDB" Collapsed="true">
     <Position X="1" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAQAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>studentDB.cs</FileName>
+      <HashCode>ACAAAAAAAAAQIAAAAQAAAABAAAAAAQAAAAAAAAQgAAA=</HashCode>
+      <FileName>DAO\studentDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.frmPrint" Collapsed="true">
+    <Position X="6.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQIAAIAASAAEpAAABCgAAACAAA0ACAAAACAAAICACA=</HashCode>
+      <FileName>Forms\frmPrint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.frmStatistic" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAIACAAgAAAAgKAAAAKAAAAAAAAIEAAAAQCAAA=</HashCode>
+      <FileName>Forms\frmStatistic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.updateStdFrm" Collapsed="true">
+    <Position X="6.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAUAAEQAACACABEBAAzAABACAAAAIAAgEAAkAACAAAA=</HashCode>
+      <FileName>Forms\updateStdFrm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

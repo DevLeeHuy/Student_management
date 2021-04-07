@@ -94,5 +94,7 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Upload image unsuccessfully!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+   
     }
 }

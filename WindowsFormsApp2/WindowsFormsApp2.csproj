@@ -204,6 +204,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\background-gradient-cau-vong_052410381.jpg" />
+    <None Include="Resources\hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg" />
     <Content Include="Resource\User.jpg" />
   </ItemGroup>
   <ItemGroup>
