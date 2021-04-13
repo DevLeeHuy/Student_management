@@ -36,3 +36,6 @@ C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\
 C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Forms.Courses.AddCourseFrm.resources
 C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Forms.Courses.EditCourseFrm.resources
+C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Forms.Courses.DeleteCourseFrm.resources
+C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Forms.Courses.PrintCourseFrm.resources
+C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Forms.Courses.ManageCourseFrm.resources

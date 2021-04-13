@@ -76,11 +76,7 @@ namespace WindowsFormsApp2.Forms.Courses
 
         private void EditCourseFrm_Load(object sender, EventArgs e)
         {
-            if(cboxCourse.SelectedIndex == 0)
-            {
-                txtLb.Enabled = false;
-
-            }
+           
         }
     }
 }

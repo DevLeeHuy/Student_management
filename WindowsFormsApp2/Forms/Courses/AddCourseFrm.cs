@@ -27,13 +27,29 @@ namespace WindowsFormsApp2.Forms.Courses
                 string label = txtLb.Text;
                 int period = Int32.Parse(txtPr.Text);
                 string des = txtDes.Text;
-                course newCourse = new course(id, label, period, des);
-                if (courseDB.insertCourse(newCourse))
+                if(period > 10)
                 {
-                    MessageBox.Show("Add successfully");
+                    if (!courseDB.courseExist(label))
+                    {
+                        course newCourse = new course(id, label, period, des);
+                        if (courseDB.insertCourse(newCourse))
+                        {
+                            MessageBox.Show("Add successfully");
+                        }
+                        else
+                            MessageBox.Show("Something was Wrong!!!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Duplicated information!!");
+                    }
+                   
                 }
                 else
-                    MessageBox.Show("Something was Wrong!!!");
+                {
+                    MessageBox.Show("Period need more than 10");
+                }
+               
             }
             catch
             {

@@ -233,5 +233,15 @@ namespace WindowsFormsApp2.Forms
                 MessageBox.Show("Save successful"+ svf.FileName + ("." + ImageFormat.Jpeg.ToString()));
             }
         }
+
+        private void lbTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnTotal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

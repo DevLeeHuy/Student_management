@@ -411,6 +411,7 @@
             this.pnTotal.Name = "pnTotal";
             this.pnTotal.Size = new System.Drawing.Size(274, 62);
             this.pnTotal.TabIndex = 66;
+            this.pnTotal.Paint += new System.Windows.Forms.PaintEventHandler(this.pnTotal_Paint);
             // 
             // lbTotal
             // 
@@ -422,6 +423,7 @@
             this.lbTotal.Size = new System.Drawing.Size(206, 31);
             this.lbTotal.TabIndex = 0;
             this.lbTotal.Text = "Total students:";
+            this.lbTotal.Click += new System.EventHandler(this.lbTotal_Click);
             // 
             // btnDown
             // 

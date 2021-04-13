@@ -80,12 +80,29 @@ namespace WindowsFormsApp2.DAO
             }
         }
 
-        public static bool deleteCourse(string id)
+        public static bool deleteCourse(int id)
         {
             SqlCommand cmd = new SqlCommand("DELETE FROM course WHERE id = @id", db.getConnection());
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             db.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
+            {
+                db.closeConnection();
+                return true;
+            }
+            else
+            {
+                db.closeConnection();
+                return false;
+            }
+        }
+
+        public static bool courseExist(string label)
+        {
+            db.openConnection();
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM course WHERE label =@lb", db.getConnection());
+            cmd.Parameters.Add("@lb", SqlDbType.VarChar).Value = label;
+            if(Convert.ToInt32(cmd.ExecuteScalar()) != 0)
             {
                 db.closeConnection();
                 return true;

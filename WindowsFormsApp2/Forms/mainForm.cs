@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp2.Forms;
+using WindowsFormsApp2.Forms.Courses;
 
 namespace WindowsFormsApp2
 {
@@ -91,27 +92,32 @@ namespace WindowsFormsApp2
 
         private void addCourseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form add = new AddCourseFrm();
+            add.ShowDialog();
         }
 
         private void editCourseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form edit = new EditCourseFrm();
+            edit.ShowDialog();
         }
 
         private void deleteCourseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form delete = new DeleteCourseFrm();
+            delete.ShowDialog();
         }
 
         private void manageCourseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form manage = new ManageCourseFrm();
+            manage.ShowDialog();
         }
 
         private void printToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            Form print = new PrintCourseFrm();
+            print.ShowDialog();
         }
     }
 }

@@ -72,6 +72,18 @@
     <Compile Include="Forms\Courses\EditCourseFrm.Designer.cs">
       <DependentUpon>EditCourseFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Courses\ManageCourseFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\ManageCourseFrm.Designer.cs">
+      <DependentUpon>ManageCourseFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\PrintCourseFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\PrintCourseFrm.Designer.cs">
+      <DependentUpon>PrintCourseFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\errorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +148,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Courses\EditCourseFrm.resx">
       <DependentUpon>EditCourseFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\ManageCourseFrm.resx">
+      <DependentUpon>ManageCourseFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\PrintCourseFrm.resx">
+      <DependentUpon>PrintCourseFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\errorForm.resx">
       <DependentUpon>errorForm.cs</DependentUpon>

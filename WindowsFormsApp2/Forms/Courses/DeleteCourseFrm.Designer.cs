@@ -30,6 +30,7 @@
         {
             this.lbId = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.deleteBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbId
@@ -44,16 +45,29 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(310, 98);
+            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(269, 88);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(287, 22);
+            this.txtId.Size = new System.Drawing.Size(287, 38);
             this.txtId.TabIndex = 1;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.Location = new System.Drawing.Point(602, 88);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(174, 38);
+            this.deleteBtn.TabIndex = 2;
+            this.deleteBtn.Text = "DELETE";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // DeleteCourseFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 233);
+            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lbId);
             this.Name = "DeleteCourseFrm";
@@ -67,5 +81,6 @@
 
         private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button deleteBtn;
     }
 }
