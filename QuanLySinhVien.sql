@@ -76,3 +76,19 @@ VALUES
     N'window programming', -- label - nvarchar(50)
     'New course'   -- description - text
     )
+
+CREATE TABLE Study(
+	sid NVARCHAR(100) FOREIGN KEY REFERENCES dbo.student(id) ON DELETE CASCADE,
+	cid INT FOREIGN KEY REFERENCES dbo.course(id) ON DELETE CASCADE
+)
+DROP TABLE dbo.Study
+
+INSERT INTO dbo.Study
+(
+    sid,
+    cid
+)
+VALUES
+(   N'', -- sid - nvarchar(100)
+    0    -- cid - int
+    )

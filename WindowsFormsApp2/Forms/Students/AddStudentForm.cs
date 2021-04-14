@@ -29,7 +29,7 @@ namespace WindowsFormsApp2
             {
                 string fname = txtFname.Text;
                 string lname = txtLname.Text;
-                string id = txtId.Text;
+                int id = Int32.Parse(txtId.Text);
                 DateTime birth = birthPicker.Value;
 
                 int bornYear = birthPicker.Value.Year;

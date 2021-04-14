@@ -42,8 +42,14 @@
             this.gvListCourse = new System.Windows.Forms.DataGridView();
             this.pnTotal = new System.Windows.Forms.Panel();
             this.lbTotal = new System.Windows.Forms.Label();
+            this.listStdBtn = new System.Windows.Forms.Button();
+            this.gvListStudent = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbStudent = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvListCourse)).BeginInit();
             this.pnTotal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvListStudent)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // addBtn
@@ -154,7 +160,7 @@
             this.gvListCourse.Name = "gvListCourse";
             this.gvListCourse.RowHeadersWidth = 51;
             this.gvListCourse.RowTemplate.Height = 24;
-            this.gvListCourse.Size = new System.Drawing.Size(606, 485);
+            this.gvListCourse.Size = new System.Drawing.Size(274, 485);
             this.gvListCourse.TabIndex = 20;
             // 
             // pnTotal
@@ -177,11 +183,54 @@
             this.lbTotal.TabIndex = 0;
             this.lbTotal.Text = "Total Courses:";
             // 
+            // listStdBtn
+            // 
+            this.listStdBtn.Location = new System.Drawing.Point(327, 28);
+            this.listStdBtn.Name = "listStdBtn";
+            this.listStdBtn.Size = new System.Drawing.Size(149, 33);
+            this.listStdBtn.TabIndex = 68;
+            this.listStdBtn.Text = "List Student";
+            this.listStdBtn.UseVisualStyleBackColor = true;
+            this.listStdBtn.Click += new System.EventHandler(this.listStdBtn_Click);
+            // 
+            // gvListStudent
+            // 
+            this.gvListStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvListStudent.Location = new System.Drawing.Point(974, 13);
+            this.gvListStudent.Name = "gvListStudent";
+            this.gvListStudent.RowHeadersWidth = 51;
+            this.gvListStudent.RowTemplate.Height = 24;
+            this.gvListStudent.Size = new System.Drawing.Size(457, 484);
+            this.gvListStudent.TabIndex = 69;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.lbStudent);
+            this.panel1.Location = new System.Drawing.Point(1157, 513);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(274, 62);
+            this.panel1.TabIndex = 68;
+            // 
+            // lbStudent
+            // 
+            this.lbStudent.AutoSize = true;
+            this.lbStudent.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStudent.ForeColor = System.Drawing.Color.Coral;
+            this.lbStudent.Location = new System.Drawing.Point(3, 14);
+            this.lbStudent.Name = "lbStudent";
+            this.lbStudent.Size = new System.Drawing.Size(211, 31);
+            this.lbStudent.TabIndex = 0;
+            this.lbStudent.Text = "Total Students:";
+            // 
             // ManageCourseFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1303, 721);
+            this.ClientSize = new System.Drawing.Size(1477, 721);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.gvListStudent);
+            this.Controls.Add(this.listStdBtn);
             this.Controls.Add(this.pnTotal);
             this.Controls.Add(this.gvListCourse);
             this.Controls.Add(this.deleteBtn);
@@ -201,6 +250,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvListCourse)).EndInit();
             this.pnTotal.ResumeLayout(false);
             this.pnTotal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvListStudent)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +274,9 @@
         private System.Windows.Forms.DataGridView gvListCourse;
         private System.Windows.Forms.Panel pnTotal;
         private System.Windows.Forms.Label lbTotal;
+        private System.Windows.Forms.Button listStdBtn;
+        private System.Windows.Forms.DataGridView gvListStudent;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbStudent;
     }
 }

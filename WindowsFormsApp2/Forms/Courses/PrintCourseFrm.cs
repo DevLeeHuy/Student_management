@@ -122,7 +122,7 @@ namespace WindowsFormsApp2.Forms.Courses
                 {
                     Word.Range headerRange = section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range;
                     headerRange.Fields.Add(headerRange, Word.WdFieldType.wdFieldPage);
-                    headerRange.Text = "Student list table";
+                    headerRange.Text = "Course list table";
                     headerRange.Font.Size = 16;
                     headerRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
                 }

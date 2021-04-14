@@ -21,7 +21,7 @@ namespace WindowsFormsApp2.Forms
 
         private void FindBtn_Click(object sender, EventArgs e)
         {
-            string id = txtId.Text;
+            int id = Int32.Parse(txtId.Text);
             student std = studentDB.getStdById(id);
             if (std != null)
             {
@@ -50,7 +50,7 @@ namespace WindowsFormsApp2.Forms
         {
             string fname = txtFname.Text;
             string lname = txtLname.Text;
-            string id = txtId.Text;
+            int id = Int32.Parse(txtId.Text);
             DateTime birth = birthPicker.Value;
 
             int bornYear = birthPicker.Value.Year;
@@ -94,7 +94,7 @@ namespace WindowsFormsApp2.Forms
 
         private void RemoveBtn_Click(object sender, EventArgs e)
         {
-            string id = txtId.Text;
+            int id = Int32.Parse(txtId.Text);
             if (studentDB.deleteStudent(id))
             {
                 MessageBox.Show("Done", "Remove successfully");
@@ -160,7 +160,7 @@ namespace WindowsFormsApp2.Forms
             {
                 string fname = txtFname.Text;
                 string lname = txtLname.Text;
-                string id = txtId.Text;
+                int id = Int32.Parse(txtId.Text);
                 DateTime birth = birthPicker.Value;
 
                 int bornYear = birthPicker.Value.Year;

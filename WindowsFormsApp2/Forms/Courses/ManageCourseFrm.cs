@@ -86,11 +86,24 @@ namespace WindowsFormsApp2.Forms.Courses
             gvListCourse.AllowUserToAddRows = false;
             showTotalCourse();
         }
+        void showListStudent(DataTable dt)
+        {
+            gvListStudent.DataSource = dt;
+            gvListStudent.AllowUserToAddRows = false;
+            showTotalStudent();
+        }
         void showTotalCourse()
         {
 
             float total = gvListCourse.Rows.Count;
-            lbTotal.Text = "Total students: " + total;
+            lbTotal.Text = "Total courses: " + total;
+
+        }
+        void showTotalStudent()
+        {
+
+            float total = gvListStudent.Rows.Count;
+            lbStudent.Text = "Total students: " + total;
 
         }
 
@@ -120,6 +133,10 @@ namespace WindowsFormsApp2.Forms.Courses
             }
         }
 
-
+        private void listStdBtn_Click(object sender, EventArgs e)
+        {
+            int id = Int32.Parse(txtId.Text);
+            showListStudent(courseDB.getListStudy(id));
+        }
     }
 }

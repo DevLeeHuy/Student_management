@@ -26,7 +26,7 @@ namespace WindowsFormsApp2
         public static bool insertStudent(student stu)
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO student VALUES(@id, @ln, @fn, @birth, @gender, @phone, @address,@img)", db.getConnection());
-            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = stu.Id;
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = stu.Id;
             cmd.Parameters.Add("@ln", SqlDbType.VarChar).Value = stu.LastName;
             cmd.Parameters.Add("@fn", SqlDbType.VarChar).Value = stu.FirstName;
             cmd.Parameters.Add("@birth", SqlDbType.DateTime).Value = stu.BirthDate;
@@ -50,7 +50,7 @@ namespace WindowsFormsApp2
         {
             SqlCommand cmd = new SqlCommand("UPDATE student SET lname = @ln, fname = @fn, BirthDate=@birth, gender = @gender," +
                 "phone = @phone, address = @address, img = @img WHERE id = @id", db.getConnection());
-            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = stu.Id;
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = stu.Id;
             cmd.Parameters.Add("@ln", SqlDbType.VarChar).Value = stu.LastName;
             cmd.Parameters.Add("@fn", SqlDbType.VarChar).Value = stu.FirstName;
             cmd.Parameters.Add("@birth", SqlDbType.DateTime).Value = stu.BirthDate;
@@ -71,10 +71,10 @@ namespace WindowsFormsApp2
             }
         }
 
-        public static bool deleteStudent(string id)
+        public static bool deleteStudent(int id)
         {
             SqlCommand cmd = new SqlCommand("DELETE FROM student WHERE id = @id", db.getConnection());
-            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             db.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {
@@ -88,11 +88,11 @@ namespace WindowsFormsApp2
             }
         }
 
-        public static student getStdById(string id)
+        public static student getStdById(int id)
         {
             db.openConnection();
             SqlCommand cmd = new SqlCommand("SELECT * FROM student WHERE id = @id", db.getConnection());
-            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             SqlDataReader dt = cmd.ExecuteReader();
             while (dt.Read())
             {

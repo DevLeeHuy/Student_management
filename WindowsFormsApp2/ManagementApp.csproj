@@ -48,10 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\courseDB.cs" />
-    <Compile Include="Forms\AddStudentForm.cs">
+    <Compile Include="Forms\Students\AddStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddStudentForm.Designer.cs">
+    <Compile Include="Forms\Students\AddStudentForm.Designer.cs">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Courses\AddCourseFrm.cs">
@@ -90,22 +90,22 @@
     <Compile Include="Forms\errorForm.Designer.cs">
       <DependentUpon>errorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmManage.cs">
+    <Compile Include="Forms\Students\frmManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmManage.Designer.cs">
+    <Compile Include="Forms\Students\frmManage.Designer.cs">
       <DependentUpon>frmManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmPrint.cs">
+    <Compile Include="Forms\Students\frmPrint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmPrint.Designer.cs">
+    <Compile Include="Forms\Students\frmPrint.Designer.cs">
       <DependentUpon>frmPrint.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmStatistic.cs">
+    <Compile Include="Forms\Students\frmStatistic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmStatistic.Designer.cs">
+    <Compile Include="Forms\Students\frmStatistic.Designer.cs">
       <DependentUpon>frmStatistic.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\mainForm.cs">
@@ -126,10 +126,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="model\student.cs" />
     <Compile Include="DAO\studentDB.cs" />
-    <Compile Include="Forms\updateStdFrm.cs">
+    <Compile Include="Forms\Students\updateStdFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\updateStdFrm.Designer.cs">
+    <Compile Include="Forms\Students\updateStdFrm.Designer.cs">
       <DependentUpon>updateStdFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="usersDataSet.Designer.cs">
@@ -137,7 +137,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>usersDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\AddStudentForm.resx">
+    <EmbeddedResource Include="Forms\Students\AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Courses\AddCourseFrm.resx">
@@ -161,13 +161,13 @@
     <EmbeddedResource Include="Forms\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmManage.resx">
+    <EmbeddedResource Include="Forms\Students\frmManage.resx">
       <DependentUpon>frmManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmPrint.resx">
+    <EmbeddedResource Include="Forms\Students\frmPrint.resx">
       <DependentUpon>frmPrint.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmStatistic.resx">
+    <EmbeddedResource Include="Forms\Students\frmStatistic.resx">
       <DependentUpon>frmStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\mainForm.resx">
@@ -183,7 +183,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Forms\updateStdFrm.resx">
+    <EmbeddedResource Include="Forms\Students\updateStdFrm.resx">
       <DependentUpon>updateStdFrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -215,7 +215,9 @@
     <None Include="Resources\background-gradient-cau-vong_052410381.jpg" />
     <None Include="Resources\hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Forms\Scores\" />
+  </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>

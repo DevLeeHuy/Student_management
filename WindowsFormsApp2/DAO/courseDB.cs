@@ -136,8 +136,18 @@ namespace WindowsFormsApp2.DAO
             }
             db.closeConnection();
             return null;
-
-
+        }
+    
+        public static DataTable getListStudy(int id)
+        {
+            //db.openConnection();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.getListStudy(@id)", db.getConnection());
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            //db.closeConnection();
+            return dt;
         }
     }
 }

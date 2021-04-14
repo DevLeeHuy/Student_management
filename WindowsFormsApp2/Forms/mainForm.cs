@@ -67,7 +67,7 @@ namespace WindowsFormsApp2
 
         private void gvListStudent_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            updateStdFrm edit = new updateStdFrm(gvListStudent.CurrentRow.Cells[0].Value.ToString());    
+            updateStdFrm edit = new updateStdFrm(Convert.ToInt32(gvListStudent.CurrentRow.Cells[0].Value));    
             
             edit.ShowDialog();
         }

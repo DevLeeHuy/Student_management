@@ -97,19 +97,23 @@ namespace WindowsFormsApp2
             if (DGV.Rows.Count != 0)
             {
                 int RowCount = DGV.Rows.Count;
-                int ColumnCount = DGV.Columns.Count;
+                int ColumnCount = DGV.Columns.Count + 1;
                 Object[,] DataArray = new object[RowCount + 1, ColumnCount + 1];
 
                 //add rows
                 int r = 0;
+                
                 for ( r = 0; r <= RowCount - 1; r++)
                 {
                     for (int c = 0; c <= ColumnCount - 1; c++)
-                    {               
-                        DataArray[r, c] = DGV.Rows[r].Cells[c].Value;
+                    {
+                        if (c == 0)
+                            DataArray[r, c] = r+1; //cot stt             
+                        else
+                            DataArray[r, c] = DGV.Rows[r].Cells[c-1].Value;
                     } //end row loop
                 } //end column loop
-
+                //DataArray[0, 0] = "STT"; //Them cot stt
           
                
                 Word.Document oDoc = new Word.Document();
@@ -163,10 +167,12 @@ namespace WindowsFormsApp2
                 oDoc.Application.Selection.Tables[1].Rows[1].Range.Font.Size = 14;
 
                 //add header row manually
-                for (int c = 0; c <= ColumnCount - 1; c++)
+                for (int c = 1; c <= ColumnCount - 1; c++)
                 {
-                    oDoc.Application.Selection.Tables[1].Cell(1, c + 1).Range.Text = DGV.Columns[c].HeaderText;
+                    oDoc.Application.Selection.Tables[1].Cell(1, c + 1).Range.Text = DGV.Columns[c-1].HeaderText;
                 }
+                oDoc.Application.Selection.Tables[1].Cell(1, 1).Range.Text = "STT";
+
 
                 //table style 
                 oDoc.Application.Selection.Tables[1].set_Style("Grid Table 4 - Accent 5");
@@ -190,8 +196,8 @@ namespace WindowsFormsApp2
                     MemoryStream ms = new MemoryStream(imgbyte);
                     Image finalPic = (Image)(new Bitmap(Image.FromStream(ms), new Size(70, 70)));
                     Clipboard.SetDataObject(finalPic);
-                    oDoc.Application.Selection.Tables[1].Cell(r+2, 8).Range.Paste();
-                    oDoc.Application.Selection.Tables[1].Cell(r+2, 8).Range.InsertParagraph();
+                    oDoc.Application.Selection.Tables[1].Cell(r+2, ColumnCount).Range.Paste();
+                    oDoc.Application.Selection.Tables[1].Cell(r+2, ColumnCount).Range.InsertParagraph();
                 }
                 //save the file
                 oDoc.SaveAs(filename);
