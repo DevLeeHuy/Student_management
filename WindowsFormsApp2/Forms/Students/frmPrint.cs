@@ -189,6 +189,8 @@ namespace WindowsFormsApp2
                     headerRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
                 }
 
+                
+
                 //save images
                 for (r = 0; r <= RowCount - 1; r++)
                 {

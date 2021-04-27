@@ -46,6 +46,12 @@
             this.gvListStudent = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbStudent = new System.Windows.Forms.Label();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.lboxCourse = new System.Windows.Forms.ListBox();
+            this.firstBtn = new System.Windows.Forms.Button();
+            this.preBtn = new System.Windows.Forms.Button();
+            this.nextBtn = new System.Windows.Forms.Button();
+            this.lastBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvListCourse)).BeginInit();
             this.pnTotal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvListStudent)).BeginInit();
@@ -54,12 +60,13 @@
             // 
             // addBtn
             // 
+            this.addBtn.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.addBtn.Location = new System.Drawing.Point(220, 398);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(136, 99);
             this.addBtn.TabIndex = 17;
             this.addBtn.Text = "ADD";
-            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.UseVisualStyleBackColor = false;
             // 
             // txtLb
             // 
@@ -133,24 +140,26 @@
             // 
             // editBtn
             // 
+            this.editBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.editBtn.Location = new System.Drawing.Point(365, 398);
             this.editBtn.Margin = new System.Windows.Forms.Padding(6);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(129, 99);
             this.editBtn.TabIndex = 18;
             this.editBtn.Text = "EDIT";
-            this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.UseVisualStyleBackColor = false;
             this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // deleteBtn
             // 
+            this.deleteBtn.BackColor = System.Drawing.Color.Red;
             this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBtn.Location = new System.Drawing.Point(503, 398);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(134, 99);
             this.deleteBtn.TabIndex = 19;
             this.deleteBtn.Text = "DELETE";
-            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.UseVisualStyleBackColor = false;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // gvListCourse
@@ -187,7 +196,7 @@
             // 
             this.listStdBtn.Location = new System.Drawing.Point(327, 28);
             this.listStdBtn.Name = "listStdBtn";
-            this.listStdBtn.Size = new System.Drawing.Size(149, 33);
+            this.listStdBtn.Size = new System.Drawing.Size(132, 33);
             this.listStdBtn.TabIndex = 68;
             this.listStdBtn.Text = "List Student";
             this.listStdBtn.UseVisualStyleBackColor = true;
@@ -223,11 +232,85 @@
             this.lbStudent.TabIndex = 0;
             this.lbStudent.Text = "Total Students:";
             // 
+            // saveBtn
+            // 
+            this.saveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveBtn.Location = new System.Drawing.Point(1302, 581);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(129, 38);
+            this.saveBtn.TabIndex = 2;
+            this.saveBtn.Text = "SAVE TO WORD";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // lboxCourse
+            // 
+            this.lboxCourse.FormattingEnabled = true;
+            this.lboxCourse.ItemHeight = 16;
+            this.lboxCourse.Location = new System.Drawing.Point(693, 13);
+            this.lboxCourse.Name = "lboxCourse";
+            this.lboxCourse.Size = new System.Drawing.Size(274, 484);
+            this.lboxCourse.TabIndex = 70;
+            // 
+            // firstBtn
+            // 
+            this.firstBtn.BackColor = System.Drawing.SystemColors.ControlText;
+            this.firstBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.firstBtn.Location = new System.Drawing.Point(25, 568);
+            this.firstBtn.Name = "firstBtn";
+            this.firstBtn.Size = new System.Drawing.Size(127, 51);
+            this.firstBtn.TabIndex = 71;
+            this.firstBtn.Text = "FIRST";
+            this.firstBtn.UseVisualStyleBackColor = false;
+            this.firstBtn.Click += new System.EventHandler(this.firstBtn_Click);
+            // 
+            // preBtn
+            // 
+            this.preBtn.BackColor = System.Drawing.SystemColors.ControlText;
+            this.preBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.preBtn.Location = new System.Drawing.Point(185, 568);
+            this.preBtn.Name = "preBtn";
+            this.preBtn.Size = new System.Drawing.Size(127, 51);
+            this.preBtn.TabIndex = 72;
+            this.preBtn.Text = "PREVIOUS";
+            this.preBtn.UseVisualStyleBackColor = false;
+            this.preBtn.Click += new System.EventHandler(this.preBtn_Click);
+            // 
+            // nextBtn
+            // 
+            this.nextBtn.BackColor = System.Drawing.SystemColors.ControlText;
+            this.nextBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.nextBtn.Location = new System.Drawing.Point(343, 568);
+            this.nextBtn.Name = "nextBtn";
+            this.nextBtn.Size = new System.Drawing.Size(127, 51);
+            this.nextBtn.TabIndex = 73;
+            this.nextBtn.Text = "NEXT";
+            this.nextBtn.UseVisualStyleBackColor = false;
+            this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
+            // 
+            // lastBtn
+            // 
+            this.lastBtn.BackColor = System.Drawing.SystemColors.ControlText;
+            this.lastBtn.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lastBtn.Location = new System.Drawing.Point(510, 568);
+            this.lastBtn.Name = "lastBtn";
+            this.lastBtn.Size = new System.Drawing.Size(127, 51);
+            this.lastBtn.TabIndex = 74;
+            this.lastBtn.Text = "LAST";
+            this.lastBtn.UseVisualStyleBackColor = false;
+            this.lastBtn.Click += new System.EventHandler(this.lastBtn_Click);
+            // 
             // ManageCourseFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1477, 721);
+            this.Controls.Add(this.lastBtn);
+            this.Controls.Add(this.nextBtn);
+            this.Controls.Add(this.preBtn);
+            this.Controls.Add(this.firstBtn);
+            this.Controls.Add(this.lboxCourse);
+            this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gvListStudent);
             this.Controls.Add(this.listStdBtn);
@@ -278,5 +361,11 @@
         private System.Windows.Forms.DataGridView gvListStudent;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbStudent;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.ListBox lboxCourse;
+        private System.Windows.Forms.Button firstBtn;
+        private System.Windows.Forms.Button preBtn;
+        private System.Windows.Forms.Button nextBtn;
+        private System.Windows.Forms.Button lastBtn;
     }
 }

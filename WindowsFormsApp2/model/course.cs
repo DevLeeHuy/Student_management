@@ -12,11 +12,13 @@ namespace WindowsFormsApp2.model
         private string label;
         private int period;
         private string description;
+        private int semester;
 
         public int Id { get => id; set => id = value; }
         public string Description { get => description; set => description = value; }
         public string Label { get => label; set => label = value; }
         public int Period { get => period; set => period = value; }
+        public int Semester { get => semester; set => semester = value; }
 
         public course() { }
         public course(int id, string label, int period, string description)
@@ -25,6 +27,7 @@ namespace WindowsFormsApp2.model
             this.label = label;
             this.period = period;
             this.description = description;
+           // this.semester = semester;
         }
     }
 }

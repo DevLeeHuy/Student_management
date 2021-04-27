@@ -37,16 +37,21 @@
             this.manageStudentFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gvListStudent = new System.Windows.Forms.DataGridView();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.searchBtn = new System.Windows.Forms.Button();
             this.addCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gvListStudent = new System.Windows.Forms.DataGridView();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.addScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.avgScoreByCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvListStudent)).BeginInit();
             this.SuspendLayout();
@@ -132,8 +137,49 @@
             this.cOURSEToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
             this.cOURSEToolStripMenuItem.Text = "COURSE";
             // 
+            // addCourseToolStripMenuItem
+            // 
+            this.addCourseToolStripMenuItem.Name = "addCourseToolStripMenuItem";
+            this.addCourseToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.addCourseToolStripMenuItem.Text = "Add new course";
+            this.addCourseToolStripMenuItem.Click += new System.EventHandler(this.addCourseToolStripMenuItem_Click);
+            // 
+            // editCourseToolStripMenuItem
+            // 
+            this.editCourseToolStripMenuItem.Name = "editCourseToolStripMenuItem";
+            this.editCourseToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.editCourseToolStripMenuItem.Text = "Edit course";
+            this.editCourseToolStripMenuItem.Click += new System.EventHandler(this.editCourseToolStripMenuItem_Click);
+            // 
+            // deleteCourseToolStripMenuItem
+            // 
+            this.deleteCourseToolStripMenuItem.Name = "deleteCourseToolStripMenuItem";
+            this.deleteCourseToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.deleteCourseToolStripMenuItem.Text = "Delete course";
+            this.deleteCourseToolStripMenuItem.Click += new System.EventHandler(this.deleteCourseToolStripMenuItem_Click);
+            // 
+            // manageCourseToolStripMenuItem
+            // 
+            this.manageCourseToolStripMenuItem.Name = "manageCourseToolStripMenuItem";
+            this.manageCourseToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.manageCourseToolStripMenuItem.Text = "Manage course";
+            this.manageCourseToolStripMenuItem.Click += new System.EventHandler(this.manageCourseToolStripMenuItem_Click);
+            // 
+            // printToolStripMenuItem1
+            // 
+            this.printToolStripMenuItem1.Name = "printToolStripMenuItem1";
+            this.printToolStripMenuItem1.Size = new System.Drawing.Size(198, 26);
+            this.printToolStripMenuItem1.Text = "Print";
+            this.printToolStripMenuItem1.Click += new System.EventHandler(this.printToolStripMenuItem1_Click);
+            // 
             // sCOREToolStripMenuItem
             // 
+            this.sCOREToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addScoreToolStripMenuItem,
+            this.removeScoreToolStripMenuItem,
+            this.manageScoreToolStripMenuItem,
+            this.avgScoreByCourseToolStripMenuItem,
+            this.printToolStripMenuItem2});
             this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
             this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.sCOREToolStripMenuItem.Text = "SCORE";
@@ -192,40 +238,40 @@
             this.searchBtn.UseVisualStyleBackColor = false;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // addCourseToolStripMenuItem
+            // addScoreToolStripMenuItem
             // 
-            this.addCourseToolStripMenuItem.Name = "addCourseToolStripMenuItem";
-            this.addCourseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.addCourseToolStripMenuItem.Text = "Add new course";
-            this.addCourseToolStripMenuItem.Click += new System.EventHandler(this.addCourseToolStripMenuItem_Click);
+            this.addScoreToolStripMenuItem.Name = "addScoreToolStripMenuItem";
+            this.addScoreToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.addScoreToolStripMenuItem.Text = "Add score";
+            this.addScoreToolStripMenuItem.Click += new System.EventHandler(this.addScoreToolStripMenuItem_Click);
             // 
-            // editCourseToolStripMenuItem
+            // removeScoreToolStripMenuItem
             // 
-            this.editCourseToolStripMenuItem.Name = "editCourseToolStripMenuItem";
-            this.editCourseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.editCourseToolStripMenuItem.Text = "Edit course";
-            this.editCourseToolStripMenuItem.Click += new System.EventHandler(this.editCourseToolStripMenuItem_Click);
+            this.removeScoreToolStripMenuItem.Name = "removeScoreToolStripMenuItem";
+            this.removeScoreToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.removeScoreToolStripMenuItem.Text = "Remove score";
+            this.removeScoreToolStripMenuItem.Click += new System.EventHandler(this.removeScoreToolStripMenuItem_Click);
             // 
-            // deleteCourseToolStripMenuItem
+            // manageScoreToolStripMenuItem
             // 
-            this.deleteCourseToolStripMenuItem.Name = "deleteCourseToolStripMenuItem";
-            this.deleteCourseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.deleteCourseToolStripMenuItem.Text = "Delete course";
-            this.deleteCourseToolStripMenuItem.Click += new System.EventHandler(this.deleteCourseToolStripMenuItem_Click);
+            this.manageScoreToolStripMenuItem.Name = "manageScoreToolStripMenuItem";
+            this.manageScoreToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.manageScoreToolStripMenuItem.Text = "Manage score";
+            this.manageScoreToolStripMenuItem.Click += new System.EventHandler(this.manageScoreToolStripMenuItem_Click);
             // 
-            // manageCourseToolStripMenuItem
+            // avgScoreByCourseToolStripMenuItem
             // 
-            this.manageCourseToolStripMenuItem.Name = "manageCourseToolStripMenuItem";
-            this.manageCourseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.manageCourseToolStripMenuItem.Text = "Manage course";
-            this.manageCourseToolStripMenuItem.Click += new System.EventHandler(this.manageCourseToolStripMenuItem_Click);
+            this.avgScoreByCourseToolStripMenuItem.Name = "avgScoreByCourseToolStripMenuItem";
+            this.avgScoreByCourseToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.avgScoreByCourseToolStripMenuItem.Text = "Avg Score by course";
+            this.avgScoreByCourseToolStripMenuItem.Click += new System.EventHandler(this.avgScoreByCourseToolStripMenuItem_Click);
             // 
-            // printToolStripMenuItem1
+            // printToolStripMenuItem2
             // 
-            this.printToolStripMenuItem1.Name = "printToolStripMenuItem1";
-            this.printToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.printToolStripMenuItem1.Text = "Print";
-            this.printToolStripMenuItem1.Click += new System.EventHandler(this.printToolStripMenuItem1_Click);
+            this.printToolStripMenuItem2.Name = "printToolStripMenuItem2";
+            this.printToolStripMenuItem2.Size = new System.Drawing.Size(226, 26);
+            this.printToolStripMenuItem2.Text = "Print";
+            this.printToolStripMenuItem2.Click += new System.EventHandler(this.printToolStripMenuItem2_Click);
             // 
             // mainForm
             // 
@@ -270,5 +316,10 @@
         private System.Windows.Forms.ToolStripMenuItem deleteCourseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageCourseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem addScoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeScoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageScoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem avgScoreByCourseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem2;
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp2.Forms;
 using WindowsFormsApp2.Forms.Courses;
+using WindowsFormsApp2.Forms.Scores;
 
 namespace WindowsFormsApp2
 {
@@ -118,6 +119,35 @@ namespace WindowsFormsApp2
         {
             Form print = new PrintCourseFrm();
             print.ShowDialog();
+        }
+
+        private void addScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form addScore = new AddScore();
+            addScore.ShowDialog();
+        }
+
+        private void removeScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form removeScore = new RemoveScore();
+            removeScore.ShowDialog();
+        }
+
+        private void manageScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form manageScore = new ManageScore();
+            manageScore.ShowDialog();
+        }
+
+        private void avgScoreByCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form avg = new AvgScore();
+            avg.ShowDialog();
+        }
+
+        private void printToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

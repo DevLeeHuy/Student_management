@@ -40,7 +40,7 @@ values('lehuy','1234');
 select * from users;
 
 create table student(
-	id nvarchar(100) NOT NULL,
+	id INT NOT NULL,
 	lname nvarchar(100) NOT NULL,
 	fname nvarchar(100) NOT NULL,
 	BirthDate nvarchar(100) NOT NULL, 
@@ -50,6 +50,7 @@ create table student(
 	img image,
 	PRIMARY KEY (id)
 	);
+	DROP TABLE dbo.student
  select * from student;
  TRUNCATE TABLE dbo.student
 
@@ -62,6 +63,8 @@ create table student(
 	period int ,
 	description TEXT
  )
+ ALTER TABLE dbo.course
+ ADD semester int
  GO
  DROP TABLE course
 GO
@@ -78,9 +81,18 @@ VALUES
     )
 
 CREATE TABLE Study(
-	sid NVARCHAR(100) FOREIGN KEY REFERENCES dbo.student(id) ON DELETE CASCADE,
+	sid INT FOREIGN KEY REFERENCES dbo.student(id) ON DELETE CASCADE,
 	cid INT FOREIGN KEY REFERENCES dbo.course(id) ON DELETE CASCADE
 )
+INSERT INTO dbo.Study
+(
+    sid,
+    cid
+)
+VALUES
+(   18110063, -- sid - int
+    20 -- cid - int
+    )
 DROP TABLE dbo.Study
 
 INSERT INTO dbo.Study
@@ -92,3 +104,60 @@ VALUES
 (   N'', -- sid - nvarchar(100)
     0    -- cid - int
     )
+
+GO
+SELECT * FROM dbo.student
+SELECT * FROM dbo.course
+SELECT * FROM dbo.Study
+
+GO 
+ALTER FUNCTION getListStudy(@id int)
+RETURNS TABLE
+AS
+RETURN	(
+	SELECT s.id, s.lname,s.fname,s.gender FROM dbo.course AS c,dbo.student AS s,dbo.Score AS stdy 
+	WHERE c.id = stdy.cid
+	AND	s.id = stdy.sid
+	AND	c.id = @id
+)
+
+GO
+SELECT * FROM getListStudy(1)
+
+CREATE TABLE Score(
+	sid INT FOREIGN KEY REFERENCES dbo.student(id) ON DELETE CASCADE,
+	cid INT	FOREIGN KEY REFERENCES dbo.course(id) ON DELETE CASCADE,
+	stdScore FLOAT,
+	description TEXT,
+	CONSTRAINT pk_scoreID PRIMARY KEY(sid,cid)
+)
+DROP TABLE dbo.Score
+
+INSERT INTO dbo.Score
+(
+    sid,
+    cid,
+    stdScore,
+    description
+)
+VALUES
+(   18110016,   -- sid - int
+    1,   -- cid - int
+    NULL, -- stdScore - float
+    'chua co diem'   -- description - text
+    )
+GO	
+CREATE FUNCTION	avgScore()
+RETURNS TABLE 
+AS	
+RETURN(
+	SELECT c.label, AVG(stdScore)AS AvgScore FROM dbo.course AS c, dbo.Score AS s
+	WHERE c.id = s.cid
+	GROUP BY c.label
+)
+GO
+SELECT * FROM	dbo.avgScore()
+
+SELECT * FROM dbo.Score
+SELECT * FROM dbo.student
+SELECT * FROM dbo.course

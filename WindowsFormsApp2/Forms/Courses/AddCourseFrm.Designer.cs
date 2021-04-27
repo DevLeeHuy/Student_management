@@ -37,6 +37,8 @@
             this.txtPr = new System.Windows.Forms.TextBox();
             this.txtLb = new System.Windows.Forms.TextBox();
             this.addBtn = new System.Windows.Forms.Button();
+            this.cbSem = new System.Windows.Forms.ComboBox();
+            this.lbSemester = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbId
@@ -119,11 +121,31 @@
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
+            // cbSem
+            // 
+            this.cbSem.FormattingEnabled = true;
+            this.cbSem.Location = new System.Drawing.Point(684, 63);
+            this.cbSem.Name = "cbSem";
+            this.cbSem.Size = new System.Drawing.Size(58, 24);
+            this.cbSem.TabIndex = 9;
+            // 
+            // lbSemester
+            // 
+            this.lbSemester.AutoSize = true;
+            this.lbSemester.Font = new System.Drawing.Font("MV Boli", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSemester.Location = new System.Drawing.Point(534, 54);
+            this.lbSemester.Name = "lbSemester";
+            this.lbSemester.Size = new System.Drawing.Size(139, 37);
+            this.lbSemester.TabIndex = 10;
+            this.lbSemester.Text = "Semester";
+            // 
             // AddCourseFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 625);
+            this.Controls.Add(this.lbSemester);
+            this.Controls.Add(this.cbSem);
             this.Controls.Add(this.addBtn);
             this.Controls.Add(this.txtLb);
             this.Controls.Add(this.txtPr);
@@ -151,5 +173,7 @@
         private System.Windows.Forms.TextBox txtPr;
         private System.Windows.Forms.TextBox txtLb;
         private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.ComboBox cbSem;
+        private System.Windows.Forms.Label lbSemester;
     }
 }

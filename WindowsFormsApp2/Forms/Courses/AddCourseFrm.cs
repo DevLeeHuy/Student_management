@@ -17,6 +17,13 @@ namespace WindowsFormsApp2.Forms.Courses
         public AddCourseFrm()
         {
             InitializeComponent();
+            //cbSem.Items.Clear();
+            //cbSem.Items.Add("--Select--");
+            //for (int i = 1; i <= 3;i++)
+            //{
+            //    cbSem.Items.Add(i);
+            //}
+            //cbSem.SelectedIndex = 0;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -27,6 +34,7 @@ namespace WindowsFormsApp2.Forms.Courses
                 string label = txtLb.Text;
                 int period = Int32.Parse(txtPr.Text);
                 string des = txtDes.Text;
+                //int semester = cbSem.SelectedItem
                 if(period > 10)
                 {
                     if (!courseDB.courseExist(label))

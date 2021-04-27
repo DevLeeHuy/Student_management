@@ -48,6 +48,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\courseDB.cs" />
+    <Compile Include="DAO\scoreDB.cs" />
+    <Compile Include="Forms\Register_Course\RegisterCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Register_Course\RegisterCourse.Designer.cs">
+      <DependentUpon>RegisterCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RemoveScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RemoveScore.Designer.cs">
+      <DependentUpon>RemoveScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Scores\AddScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Scores\AddScore.Designer.cs">
+      <DependentUpon>AddScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Scores\AvgScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Scores\AvgScore.Designer.cs">
+      <DependentUpon>AvgScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Scores\ManageScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Scores\ManageScore.Designer.cs">
+      <DependentUpon>ManageScore.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Students\AddStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +153,7 @@
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="model\course.cs" />
+    <Compile Include="model\Score.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="model\student.cs" />
@@ -137,6 +169,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>usersDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Register_Course\RegisterCourse.resx">
+      <DependentUpon>RegisterCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RemoveScore.resx">
+      <DependentUpon>RemoveScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Scores\AddScore.resx">
+      <DependentUpon>AddScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Scores\AvgScore.resx">
+      <DependentUpon>AvgScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Scores\ManageScore.resx">
+      <DependentUpon>ManageScore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Students\AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,9 +262,7 @@
     <None Include="Resources\background-gradient-cau-vong_052410381.jpg" />
     <None Include="Resources\hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Scores\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>

@@ -39,3 +39,8 @@ C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\
 C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Forms.Courses.DeleteCourseFrm.resources
 C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Forms.Courses.PrintCourseFrm.resources
 C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Forms.Courses.ManageCourseFrm.resources
+C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Forms.Scores.AddScore.resources
+C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Forms.Scores.AvgScore.resources
+C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Forms.RemoveScore.resources
+C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Forms.Scores.ManageScore.resources
+C:\Users\Dell\OneDrive\Desktop\WinProgramming\Window\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Forms.Register_Course.RegisterCourse.resources

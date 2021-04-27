@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp2.Forms.Courses;
+using WindowsFormsApp2.Forms.Register_Course;
 
 namespace WindowsFormsApp2
 {
@@ -17,7 +18,7 @@ namespace WindowsFormsApp2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainForm());
+            Application.Run(new RegisterCourse());
         }
     }
 }
