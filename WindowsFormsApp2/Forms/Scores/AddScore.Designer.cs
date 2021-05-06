@@ -89,6 +89,7 @@
             this.cboxCourse.Name = "cboxCourse";
             this.cboxCourse.Size = new System.Drawing.Size(229, 30);
             this.cboxCourse.TabIndex = 11;
+            this.cboxCourse.SelectedIndexChanged += new System.EventHandler(this.cboxCourse_SelectedIndexChanged);
             // 
             // label2
             // 

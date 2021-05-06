@@ -67,8 +67,13 @@ namespace WindowsFormsApp2.Forms.Scores
 
         private void gvListScore_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            sid = Int32.Parse(gvListScore.CurrentRow.Cells["sid"].Value.ToString());
-            cid = Int32.Parse(gvListScore.CurrentRow.Cells["cid"].Value.ToString());
+            try
+            {
+                sid = Int32.Parse(gvListScore.CurrentRow.Cells["sid"].Value.ToString());
+                cid = Int32.Parse(gvListScore.CurrentRow.Cells["cid"].Value.ToString());
+            }
+            catch { }
+           
         }
 
         private void showStdBtn_Click(object sender, EventArgs e)
@@ -84,6 +89,26 @@ namespace WindowsFormsApp2.Forms.Scores
         private void gvListScore_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             txtId.Text = gvListScore.CurrentRow.Cells[0].Value.ToString();
+            float score = float.Parse(gvListScore.CurrentRow.Cells["score"].Value.ToString());
+            txtScore.Text = score.ToString();
+
+            txtDes.Text = gvListScore.CurrentRow.Cells["description"].Value.ToString();
         }
+
+        private void cboxCourse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                showListStudent(courseDB.getListStudy(Convert.ToInt32(cboxCourse.SelectedValue)));
+            }
+            catch { }
+        }
+        void showListStudent(DataTable dt)
+        {
+            gvListScore.DataSource = dt;
+            gvListScore.AllowUserToAddRows = false;
+        }
+
+
     }
 }

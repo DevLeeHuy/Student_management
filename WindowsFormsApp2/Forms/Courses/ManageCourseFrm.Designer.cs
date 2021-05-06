@@ -61,50 +61,56 @@
             // addBtn
             // 
             this.addBtn.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.addBtn.Location = new System.Drawing.Point(220, 398);
+            this.addBtn.Location = new System.Drawing.Point(165, 323);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(136, 99);
+            this.addBtn.Size = new System.Drawing.Size(102, 80);
             this.addBtn.TabIndex = 17;
             this.addBtn.Text = "ADD";
             this.addBtn.UseVisualStyleBackColor = false;
             // 
             // txtLb
             // 
-            this.txtLb.Location = new System.Drawing.Point(185, 96);
+            this.txtLb.Location = new System.Drawing.Point(139, 78);
+            this.txtLb.Margin = new System.Windows.Forms.Padding(2);
             this.txtLb.Name = "txtLb";
-            this.txtLb.Size = new System.Drawing.Size(274, 22);
+            this.txtLb.Size = new System.Drawing.Size(206, 20);
             this.txtLb.TabIndex = 16;
             // 
             // txtPr
             // 
-            this.txtPr.Location = new System.Drawing.Point(185, 150);
+            this.txtPr.Location = new System.Drawing.Point(139, 122);
+            this.txtPr.Margin = new System.Windows.Forms.Padding(2);
             this.txtPr.Name = "txtPr";
-            this.txtPr.Size = new System.Drawing.Size(136, 22);
+            this.txtPr.Size = new System.Drawing.Size(103, 20);
             this.txtPr.TabIndex = 15;
             // 
             // txtDes
             // 
             this.txtDes.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.txtDes.Location = new System.Drawing.Point(185, 202);
+            this.txtDes.Location = new System.Drawing.Point(139, 164);
+            this.txtDes.Margin = new System.Windows.Forms.Padding(2);
             this.txtDes.Multiline = true;
             this.txtDes.Name = "txtDes";
-            this.txtDes.Size = new System.Drawing.Size(502, 164);
+            this.txtDes.Size = new System.Drawing.Size(378, 134);
             this.txtDes.TabIndex = 14;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(185, 35);
+            this.txtId.Location = new System.Drawing.Point(139, 28);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(136, 22);
+            this.txtId.Size = new System.Drawing.Size(103, 20);
             this.txtId.TabIndex = 13;
             // 
             // lbDes
             // 
             this.lbDes.AutoSize = true;
             this.lbDes.Font = new System.Drawing.Font("MV Boli", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDes.Location = new System.Drawing.Point(18, 202);
+            this.lbDes.Location = new System.Drawing.Point(14, 164);
+            this.lbDes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDes.Name = "lbDes";
-            this.lbDes.Size = new System.Drawing.Size(161, 37);
+            this.lbDes.Size = new System.Drawing.Size(126, 29);
             this.lbDes.TabIndex = 12;
             this.lbDes.Text = "Description";
             // 
@@ -112,9 +118,10 @@
             // 
             this.lbPr.AutoSize = true;
             this.lbPr.Font = new System.Drawing.Font("MV Boli", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPr.Location = new System.Drawing.Point(81, 135);
+            this.lbPr.Location = new System.Drawing.Point(61, 110);
+            this.lbPr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPr.Name = "lbPr";
-            this.lbPr.Size = new System.Drawing.Size(98, 37);
+            this.lbPr.Size = new System.Drawing.Size(77, 29);
             this.lbPr.TabIndex = 11;
             this.lbPr.Text = "Period";
             // 
@@ -122,9 +129,10 @@
             // 
             this.lbLabel.AutoSize = true;
             this.lbLabel.Font = new System.Drawing.Font("MV Boli", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLabel.Location = new System.Drawing.Point(95, 81);
+            this.lbLabel.Location = new System.Drawing.Point(71, 66);
+            this.lbLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbLabel.Name = "lbLabel";
-            this.lbLabel.Size = new System.Drawing.Size(84, 37);
+            this.lbLabel.Size = new System.Drawing.Size(66, 29);
             this.lbLabel.TabIndex = 10;
             this.lbLabel.Text = "Label";
             // 
@@ -132,19 +140,20 @@
             // 
             this.lbId.AutoSize = true;
             this.lbId.Font = new System.Drawing.Font("MV Boli", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbId.Location = new System.Drawing.Point(35, 24);
+            this.lbId.Location = new System.Drawing.Point(26, 20);
+            this.lbId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(144, 37);
+            this.lbId.Size = new System.Drawing.Size(111, 29);
             this.lbId.TabIndex = 9;
             this.lbId.Text = "Course ID";
             // 
             // editBtn
             // 
             this.editBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.editBtn.Location = new System.Drawing.Point(365, 398);
-            this.editBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.editBtn.Location = new System.Drawing.Point(274, 323);
+            this.editBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(129, 99);
+            this.editBtn.Size = new System.Drawing.Size(97, 80);
             this.editBtn.TabIndex = 18;
             this.editBtn.Text = "EDIT";
             this.editBtn.UseVisualStyleBackColor = false;
@@ -154,9 +163,10 @@
             // 
             this.deleteBtn.BackColor = System.Drawing.Color.Red;
             this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.Location = new System.Drawing.Point(503, 398);
+            this.deleteBtn.Location = new System.Drawing.Point(377, 323);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(2);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(134, 99);
+            this.deleteBtn.Size = new System.Drawing.Size(100, 80);
             this.deleteBtn.TabIndex = 19;
             this.deleteBtn.Text = "DELETE";
             this.deleteBtn.UseVisualStyleBackColor = false;
@@ -165,20 +175,22 @@
             // gvListCourse
             // 
             this.gvListCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvListCourse.Location = new System.Drawing.Point(693, 12);
+            this.gvListCourse.Location = new System.Drawing.Point(520, 10);
+            this.gvListCourse.Margin = new System.Windows.Forms.Padding(2);
             this.gvListCourse.Name = "gvListCourse";
             this.gvListCourse.RowHeadersWidth = 51;
             this.gvListCourse.RowTemplate.Height = 24;
-            this.gvListCourse.Size = new System.Drawing.Size(274, 485);
+            this.gvListCourse.Size = new System.Drawing.Size(206, 394);
             this.gvListCourse.TabIndex = 20;
             // 
             // pnTotal
             // 
             this.pnTotal.BackColor = System.Drawing.Color.RoyalBlue;
             this.pnTotal.Controls.Add(this.lbTotal);
-            this.pnTotal.Location = new System.Drawing.Point(693, 513);
+            this.pnTotal.Location = new System.Drawing.Point(520, 417);
+            this.pnTotal.Margin = new System.Windows.Forms.Padding(2);
             this.pnTotal.Name = "pnTotal";
-            this.pnTotal.Size = new System.Drawing.Size(274, 62);
+            this.pnTotal.Size = new System.Drawing.Size(206, 50);
             this.pnTotal.TabIndex = 67;
             // 
             // lbTotal
@@ -186,17 +198,19 @@
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.ForeColor = System.Drawing.Color.Coral;
-            this.lbTotal.Location = new System.Drawing.Point(15, 14);
+            this.lbTotal.Location = new System.Drawing.Point(11, 11);
+            this.lbTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(190, 31);
+            this.lbTotal.Size = new System.Drawing.Size(153, 25);
             this.lbTotal.TabIndex = 0;
             this.lbTotal.Text = "Total Courses:";
             // 
             // listStdBtn
             // 
-            this.listStdBtn.Location = new System.Drawing.Point(327, 28);
+            this.listStdBtn.Location = new System.Drawing.Point(245, 23);
+            this.listStdBtn.Margin = new System.Windows.Forms.Padding(2);
             this.listStdBtn.Name = "listStdBtn";
-            this.listStdBtn.Size = new System.Drawing.Size(132, 33);
+            this.listStdBtn.Size = new System.Drawing.Size(99, 27);
             this.listStdBtn.TabIndex = 68;
             this.listStdBtn.Text = "List Student";
             this.listStdBtn.UseVisualStyleBackColor = true;
@@ -205,20 +219,22 @@
             // gvListStudent
             // 
             this.gvListStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvListStudent.Location = new System.Drawing.Point(974, 13);
+            this.gvListStudent.Location = new System.Drawing.Point(730, 11);
+            this.gvListStudent.Margin = new System.Windows.Forms.Padding(2);
             this.gvListStudent.Name = "gvListStudent";
             this.gvListStudent.RowHeadersWidth = 51;
             this.gvListStudent.RowTemplate.Height = 24;
-            this.gvListStudent.Size = new System.Drawing.Size(457, 484);
+            this.gvListStudent.Size = new System.Drawing.Size(343, 393);
             this.gvListStudent.TabIndex = 69;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.Controls.Add(this.lbStudent);
-            this.panel1.Location = new System.Drawing.Point(1157, 513);
+            this.panel1.Location = new System.Drawing.Point(868, 417);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 62);
+            this.panel1.Size = new System.Drawing.Size(206, 50);
             this.panel1.TabIndex = 68;
             // 
             // lbStudent
@@ -226,18 +242,20 @@
             this.lbStudent.AutoSize = true;
             this.lbStudent.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStudent.ForeColor = System.Drawing.Color.Coral;
-            this.lbStudent.Location = new System.Drawing.Point(3, 14);
+            this.lbStudent.Location = new System.Drawing.Point(2, 11);
+            this.lbStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbStudent.Name = "lbStudent";
-            this.lbStudent.Size = new System.Drawing.Size(211, 31);
+            this.lbStudent.Size = new System.Drawing.Size(170, 25);
             this.lbStudent.TabIndex = 0;
             this.lbStudent.Text = "Total Students:";
             // 
             // saveBtn
             // 
             this.saveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.Location = new System.Drawing.Point(1302, 581);
+            this.saveBtn.Location = new System.Drawing.Point(976, 472);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(2);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(129, 38);
+            this.saveBtn.Size = new System.Drawing.Size(97, 31);
             this.saveBtn.TabIndex = 2;
             this.saveBtn.Text = "SAVE TO WORD";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -246,19 +264,21 @@
             // lboxCourse
             // 
             this.lboxCourse.FormattingEnabled = true;
-            this.lboxCourse.ItemHeight = 16;
-            this.lboxCourse.Location = new System.Drawing.Point(693, 13);
+            this.lboxCourse.Location = new System.Drawing.Point(520, 11);
+            this.lboxCourse.Margin = new System.Windows.Forms.Padding(2);
             this.lboxCourse.Name = "lboxCourse";
-            this.lboxCourse.Size = new System.Drawing.Size(274, 484);
+            this.lboxCourse.Size = new System.Drawing.Size(206, 394);
             this.lboxCourse.TabIndex = 70;
+            this.lboxCourse.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lboxCourse_MouseClick);
             // 
             // firstBtn
             // 
             this.firstBtn.BackColor = System.Drawing.SystemColors.ControlText;
             this.firstBtn.ForeColor = System.Drawing.Color.AliceBlue;
-            this.firstBtn.Location = new System.Drawing.Point(25, 568);
+            this.firstBtn.Location = new System.Drawing.Point(19, 462);
+            this.firstBtn.Margin = new System.Windows.Forms.Padding(2);
             this.firstBtn.Name = "firstBtn";
-            this.firstBtn.Size = new System.Drawing.Size(127, 51);
+            this.firstBtn.Size = new System.Drawing.Size(95, 41);
             this.firstBtn.TabIndex = 71;
             this.firstBtn.Text = "FIRST";
             this.firstBtn.UseVisualStyleBackColor = false;
@@ -268,9 +288,10 @@
             // 
             this.preBtn.BackColor = System.Drawing.SystemColors.ControlText;
             this.preBtn.ForeColor = System.Drawing.Color.AliceBlue;
-            this.preBtn.Location = new System.Drawing.Point(185, 568);
+            this.preBtn.Location = new System.Drawing.Point(139, 462);
+            this.preBtn.Margin = new System.Windows.Forms.Padding(2);
             this.preBtn.Name = "preBtn";
-            this.preBtn.Size = new System.Drawing.Size(127, 51);
+            this.preBtn.Size = new System.Drawing.Size(95, 41);
             this.preBtn.TabIndex = 72;
             this.preBtn.Text = "PREVIOUS";
             this.preBtn.UseVisualStyleBackColor = false;
@@ -280,9 +301,10 @@
             // 
             this.nextBtn.BackColor = System.Drawing.SystemColors.ControlText;
             this.nextBtn.ForeColor = System.Drawing.Color.AliceBlue;
-            this.nextBtn.Location = new System.Drawing.Point(343, 568);
+            this.nextBtn.Location = new System.Drawing.Point(257, 462);
+            this.nextBtn.Margin = new System.Windows.Forms.Padding(2);
             this.nextBtn.Name = "nextBtn";
-            this.nextBtn.Size = new System.Drawing.Size(127, 51);
+            this.nextBtn.Size = new System.Drawing.Size(95, 41);
             this.nextBtn.TabIndex = 73;
             this.nextBtn.Text = "NEXT";
             this.nextBtn.UseVisualStyleBackColor = false;
@@ -292,9 +314,10 @@
             // 
             this.lastBtn.BackColor = System.Drawing.SystemColors.ControlText;
             this.lastBtn.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lastBtn.Location = new System.Drawing.Point(510, 568);
+            this.lastBtn.Location = new System.Drawing.Point(382, 462);
+            this.lastBtn.Margin = new System.Windows.Forms.Padding(2);
             this.lastBtn.Name = "lastBtn";
-            this.lastBtn.Size = new System.Drawing.Size(127, 51);
+            this.lastBtn.Size = new System.Drawing.Size(95, 41);
             this.lastBtn.TabIndex = 74;
             this.lastBtn.Text = "LAST";
             this.lastBtn.UseVisualStyleBackColor = false;
@@ -302,9 +325,9 @@
             // 
             // ManageCourseFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1477, 721);
+            this.ClientSize = new System.Drawing.Size(1108, 586);
             this.Controls.Add(this.lastBtn);
             this.Controls.Add(this.nextBtn);
             this.Controls.Add(this.preBtn);
@@ -327,6 +350,7 @@
             this.Controls.Add(this.lbPr);
             this.Controls.Add(this.lbLabel);
             this.Controls.Add(this.lbId);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ManageCourseFrm";
             this.Text = "ManageCourseFrm";
             this.Load += new System.EventHandler(this.ManageCourseFrm_Load);

@@ -10,14 +10,14 @@ namespace WindowsFormsApp2.model
     {
         private int sid;
         private int cid;
-        private float stdScore;
+        private float? stdScore;
         private string description;
 
         public int Sid { get => sid; set => sid = value; }
         public int Cid { get => cid; set => cid = value; }
-        public float StdScore { get => stdScore; set => stdScore = value; }
+        public float? StdScore { get => stdScore; set => stdScore = value; }
         public string Description { get => description; set => description = value; }
-        public Score(int sid, int cid, float score, string des)
+        public Score(int sid, int cid, float? score, string des)
         {
             this.sid = sid;
             this.cid = cid;

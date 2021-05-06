@@ -36,13 +36,23 @@ namespace WindowsFormsApp2.Forms.Register_Course
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            listCourses.Add(Convert.ToInt32(lboxCou.SelectedValue));
-            lboxSelect.Items.Add(lboxCou.SelectedItem);
+            int id = Convert.ToInt32(lboxCou.SelectedValue);
+            if (!listCourses.Contains(Convert.ToInt32(lboxCou.SelectedValue)))
+            {
+                listCourses.Add(id);
+                lboxSelect.Items.Add(lboxCou.SelectedItem);
+            }
+            
         }
         private void delBtn_Click(object sender, EventArgs e)
         {
             listCourses.Remove(Convert.ToInt32(lboxSelect.SelectedValue));
             lboxSelect.Items.Remove(lboxCou.SelectedItem);
+        }
+        private void clrBtn_Click(object sender, EventArgs e)
+        {
+            listCourses.Clear();
+            lboxSelect.Items.Clear();
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -52,7 +62,7 @@ namespace WindowsFormsApp2.Forms.Register_Course
             int check = 0;
             foreach(int courseID in listCourses)
             {
-                Score temp = new Score(stdID, courseID,-1, "");
+                Score temp = new Score(stdID, courseID,null, "");
                 if (scoreDB.addScore(temp))
                 {
                     check++;
@@ -66,5 +76,7 @@ namespace WindowsFormsApp2.Forms.Register_Course
                 MessageBox.Show("Can not save 😮😮");
             
         }
+
+
     }
 }

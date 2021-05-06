@@ -3,8 +3,12 @@ use StdManagement;
 create table users(
 	id int not null identity(1,1) primary key,
 	username varchar(20),
-	password varchar(20)
+	password varchar(20),
+	fname nvarchar(20),
+	lname nvarchar(20),
+	img image
 );
+INSERT INTO users VALUES('huy','pass','huy','le',null)
 INSERT	INTO dbo.users
 (
     username,
@@ -115,7 +119,7 @@ ALTER FUNCTION getListStudy(@id int)
 RETURNS TABLE
 AS
 RETURN	(
-	SELECT s.id, s.lname,s.fname,s.gender FROM dbo.course AS c,dbo.student AS s,dbo.Score AS stdy 
+	SELECT s.id, s.lname,s.fname,s.gender,stdy.stdScore as score,stdy.description FROM dbo.course AS c,dbo.student AS s,dbo.Score AS stdy 
 	WHERE c.id = stdy.cid
 	AND	s.id = stdy.sid
 	AND	c.id = @id
@@ -161,3 +165,32 @@ SELECT * FROM	dbo.avgScore()
 SELECT * FROM dbo.Score
 SELECT * FROM dbo.student
 SELECT * FROM dbo.course
+select * from dbo.users
+
+go
+update Score set stdScore= null where sid = 18110063 and cid = 2
+
+go
+
+
+
+create database HR_management;
+use HR_management;
+create table contact(
+    id int not null identity(1,1) primary key,
+	fname nvarchar(20),
+	lname nvarchar(20),
+    phone varchar(20),
+    address nvarchar(50),
+    email varchar(20),
+    uid int foreign key references users(id) ,
+    gid int foreign key references groups(id) on delete cascade,
+	img image
+)
+create table groups(
+    id int not null identity(1,1) primary key,
+    name varchar(20),
+     uid int foreign key references users(id) on delete cascade,
+)
+
+select * from groups

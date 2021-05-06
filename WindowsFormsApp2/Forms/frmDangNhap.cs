@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp2.DAO;
+using WindowsFormsApp2.Forms;
+using WindowsFormsApp2.Forms.Human_resources;
 
 namespace WindowsFormsApp2
 {
@@ -31,13 +34,32 @@ namespace WindowsFormsApp2
         }
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            bool valid = checkAccount(usernameTb.Text, passwordTb.Text);
-           
-            if (valid)
+            DataTable valid = userDB.checkAccount(usernameTb.Text, passwordTb.Text);
+            RadioButton ckb = null;
+            foreach (RadioButton item in gboxRole.Controls)
             {
-                Form main = new mainForm();
+                if (item != null)
+                    if (item.Checked)
+                    {
+                        ckb = item;
+                        break;
+                    }
+            }
+            if (valid.Rows.Count > 0)
+            {
+                Globals.setUserID(valid);
+                Form mainform = new Form();
+                if(ckb.Text == "Student")
+                {
+                    mainform = new mainForm();
+                }
+                else
+                {
+                    mainform = new HR_mainForm();
+                }
+                
                 this.Hide();
-                main.ShowDialog();
+                mainform.ShowDialog();
             }
             else
             {
@@ -46,26 +68,17 @@ namespace WindowsFormsApp2
                 errorPass.SetError(passwordTb, "Please input your password");
             }
         }
-        public Boolean checkAccount(string username, string password)
-        {
-            myDB db = new myDB();
-            db.openConnection();
-            SqlCommand command = new SqlCommand("SELECT * FROM users WHERE username = @User AND password =@Pass", db.getConnection());
-            command.Parameters.Add("@User", SqlDbType.VarChar).Value = usernameTb.Text;
-            command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = passwordTb.Text;
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.Read())
-            {
-                db.closeConnection();
-                return true;
-            }
-            db.closeConnection();
-            return false;
-        }
+       
 
         private void mainPic_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void creAccLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form regis = new RegisterUser();
+            regis.ShowDialog();
         }
     }
 }

@@ -114,27 +114,14 @@ namespace WindowsFormsApp2.DAO
             }
         }
 
-        public static student getCourseById(string id)
+        public static course getCourseById(int id)
         {
-            db.openConnection();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM course WHERE id = @id", db.getConnection());
-            cmd.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
-            SqlDataReader dt = cmd.ExecuteReader();
-            while (dt.Read())
+            List<course> listCourse = getAllCourse();
+            foreach(course c in listCourse)
             {
-                //string lname = dt.GetValue(1).ToString();
-                //string fname = dt.GetValue(2).ToString();
-                //DateTime BirthDate = (DateTime)dt.GetValue(3);
-                //string gender = dt.GetValue(4).ToString();
-                //string phone = dt.GetValue(5).ToString();
-                //string address = dt.GetValue(6).ToString();
-                //byte[] image = (byte[])dt.GetValue(7);
-                //MemoryStream img = new MemoryStream(image);
-                db.closeConnection();
-                //return new student(id, fname, lname, BirthDate, phone, address, gender, img);
-                return null;
+                if (c.Id == id)
+                    return c;
             }
-            db.closeConnection();
             return null;
         }
     

@@ -113,6 +113,7 @@ namespace WindowsFormsApp2.Forms.Courses
         private void ManageCourseFrm_Load(object sender, EventArgs e)
         {
             showListCourse(courseDB.getListCourse());
+            lboxCourse.SelectedIndex = 0;
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -139,7 +140,26 @@ namespace WindowsFormsApp2.Forms.Courses
         private void listStdBtn_Click(object sender, EventArgs e)
         {
             int id = Int32.Parse(txtId.Text);
-            showListStudent(courseDB.getListStudy(id));
+            showCourseDetailById(id);           
+        }
+        private void lboxCourse_MouseClick(object sender, MouseEventArgs e)
+        {
+            showCourseDetailById(Convert.ToInt32(lboxCourse.SelectedValue));
+        }
+
+        private void showCourseDetailById(int id)
+        {
+            course c = courseDB.getCourseById(id);
+            if (c != null)
+            {
+                showListStudent(courseDB.getListStudy(id));
+                txtId.Text = c.Id.ToString();
+                txtLb.Text = c.Label;
+                txtDes.Text = c.Description;
+                txtPr.Text = c.Period.ToString();
+            }
+            else
+                MessageBox.Show("Can not find this id 👎👎", "Failure", MessageBoxButtons.OK);
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -261,6 +281,8 @@ namespace WindowsFormsApp2.Forms.Courses
 
             }
         }
+
+
         int couID;
         private void preBtn_Click(object sender, EventArgs e)
         {
@@ -295,5 +317,7 @@ namespace WindowsFormsApp2.Forms.Courses
             txtDes.Text = c.Description;
             txtPr.Text = c.Period.ToString();
         }
+
+
     }
 }

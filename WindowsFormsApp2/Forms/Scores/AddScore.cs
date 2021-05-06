@@ -20,8 +20,8 @@ namespace WindowsFormsApp2.Forms.Scores
             cboxCourse.DataSource = courseDB.getListCourse();
             cboxCourse.DisplayMember = "label";
             cboxCourse.ValueMember = "id";
-           
-            showListStudent(studentDB.getListStudent());
+            cboxCourse.SelectedIndex = 0;
+            showListStudent(courseDB.getListStudy(Convert.ToInt32(cboxCourse.SelectedValue)));
         }
         void showListStudent(DataTable dt)
         {
@@ -44,7 +44,8 @@ namespace WindowsFormsApp2.Forms.Scores
             {
                 int sid = Int32.Parse(txtId.Text);
                 int cid = Convert.ToInt32(cboxCourse.SelectedValue);
-                float score = float.Parse(txtScore.Text);
+                float? score = txtScore.Text.ToString() == ""?-1:Convert.ToInt32(txtScore.Text);
+                if (score == -1) score = null;
                 string des = txtDes.Text;
                 Score s = new Score(sid, cid, score, des);
                 if (scoreDB.addScore(s))
@@ -67,6 +68,24 @@ namespace WindowsFormsApp2.Forms.Scores
         private void gvListStudent_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             txtId.Text = gvListStudent.CurrentRow.Cells[0].Value.ToString();
+            string temp = gvListStudent.CurrentRow.Cells["score"].Value.ToString();
+            float? score = temp == "" ? -1 : float.Parse(temp);
+            if (score == -1) score = null;
+            txtScore.Enabled = score != null ? false : true;
+            
+            txtScore.Text = score.ToString();
+
+            txtDes.Text = gvListStudent.CurrentRow.Cells["description"].Value.ToString();
+        }
+
+        private void cboxCourse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                showListStudent(courseDB.getListStudy(Convert.ToInt32(cboxCourse.SelectedValue)));
+            }
+            catch { }
+
         }
     }
 }

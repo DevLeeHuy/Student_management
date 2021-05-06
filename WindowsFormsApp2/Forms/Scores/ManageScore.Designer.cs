@@ -59,6 +59,8 @@
             // 
             // gvListScore
             // 
+            this.gvListScore.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gvListScore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvListScore.Location = new System.Drawing.Point(704, 41);
             this.gvListScore.Name = "gvListScore";
@@ -145,6 +147,7 @@
             this.cboxCourse.Name = "cboxCourse";
             this.cboxCourse.Size = new System.Drawing.Size(229, 30);
             this.cboxCourse.TabIndex = 22;
+            this.cboxCourse.SelectedIndexChanged += new System.EventHandler(this.cboxCourse_SelectedIndexChanged);
             // 
             // txtId
             // 
