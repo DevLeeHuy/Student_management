@@ -9,11 +9,11 @@ namespace WindowsFormsApp2
 {
     public static class Globals
     {
-        static Globals() { user = new DataTable(); } // default value
+        static Globals() { } 
 
-        public static DataTable user { get; private set; }
+        public static DataRow user { get; private set; }
 
-        public static void setUserID(DataTable user)
+        public static void setUser(DataRow user)
         {
             Globals.user = user;
         }

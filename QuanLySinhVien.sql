@@ -171,8 +171,19 @@ go
 update Score set stdScore= null where sid = 18110063 and cid = 2
 
 go
-
-
+alter function getCnameByCid(@cid int)
+returns varchar(20)
+as begin
+declare @name varchar(20)
+select TOP (1) @name = label from course where id = @cid 
+return @name
+end
+select dbo.getCnameByCid(2);
+go
+SELECT student.id ,stdScore FROM student LEFT JOIN Score ON student.id = Score.sid AND cid =2;
+go
+SELECT sid as id, avg(stdScore) as "Average Score" FROM Score GROUP BY sid
+go
 
 create database HR_management;
 use HR_management;
@@ -194,3 +205,5 @@ create table groups(
 )
 
 select * from groups
+select * from contact
+

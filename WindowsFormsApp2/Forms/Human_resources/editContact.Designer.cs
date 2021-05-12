@@ -31,12 +31,11 @@
         {
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            this.saveBtn = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.HandleBar = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.labelControl = new DevExpress.XtraEditors.LabelControl();
             this.upImgBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtGroup = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -50,44 +49,48 @@
             this.Avatar = new System.Windows.Forms.PictureBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.gvContacts = new System.Windows.Forms.DataGridView();
+            this.cbGroups = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvContacts)).BeginInit();
             this.SuspendLayout();
             // 
-            // saveBtn
+            // HandleBar
             // 
-            this.saveBtn.AppearanceButton.Hovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.saveBtn.AppearanceButton.Hovered.FontSizeDelta = -1;
-            this.saveBtn.AppearanceButton.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.saveBtn.AppearanceButton.Hovered.Options.UseBackColor = true;
-            this.saveBtn.AppearanceButton.Hovered.Options.UseFont = true;
-            this.saveBtn.AppearanceButton.Hovered.Options.UseForeColor = true;
-            this.saveBtn.AppearanceButton.Normal.FontSizeDelta = -1;
-            this.saveBtn.AppearanceButton.Normal.Options.UseFont = true;
-            this.saveBtn.AppearanceButton.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
-            this.saveBtn.AppearanceButton.Pressed.FontSizeDelta = -1;
-            this.saveBtn.AppearanceButton.Pressed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
-            this.saveBtn.AppearanceButton.Pressed.Options.UseBackColor = true;
-            this.saveBtn.AppearanceButton.Pressed.Options.UseFont = true;
-            this.saveBtn.AppearanceButton.Pressed.Options.UseForeColor = true;
-            this.saveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.HandleBar.AppearanceButton.Hovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.HandleBar.AppearanceButton.Hovered.FontSizeDelta = -1;
+            this.HandleBar.AppearanceButton.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.HandleBar.AppearanceButton.Hovered.Options.UseBackColor = true;
+            this.HandleBar.AppearanceButton.Hovered.Options.UseFont = true;
+            this.HandleBar.AppearanceButton.Hovered.Options.UseForeColor = true;
+            this.HandleBar.AppearanceButton.Normal.FontSizeDelta = -1;
+            this.HandleBar.AppearanceButton.Normal.Options.UseFont = true;
+            this.HandleBar.AppearanceButton.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            this.HandleBar.AppearanceButton.Pressed.FontSizeDelta = -1;
+            this.HandleBar.AppearanceButton.Pressed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            this.HandleBar.AppearanceButton.Pressed.Options.UseBackColor = true;
+            this.HandleBar.AppearanceButton.Pressed.Options.UseFont = true;
+            this.HandleBar.AppearanceButton.Pressed.Options.UseForeColor = true;
+            this.HandleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             windowsUIButtonImageOptions1.ImageUri.Uri = "Save;Size32x32;GrayScaled";
             windowsUIButtonImageOptions2.ImageUri.Uri = "Edit/Delete;Size32x32;GrayScaled";
-            this.saveBtn.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            this.HandleBar.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Save", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
-            this.saveBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.saveBtn.EnableImageTransparency = true;
-            this.saveBtn.ForeColor = System.Drawing.Color.White;
-            this.saveBtn.Location = new System.Drawing.Point(0, 632);
-            this.saveBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.saveBtn.MaximumSize = new System.Drawing.Size(0, 60);
-            this.saveBtn.MinimumSize = new System.Drawing.Size(60, 60);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(546, 60);
-            this.saveBtn.TabIndex = 3;
-            this.saveBtn.Text = "windowsUIButtonPanelMain";
-            this.saveBtn.UseButtonBackgroundImages = false;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            this.HandleBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.HandleBar.EnableImageTransparency = true;
+            this.HandleBar.ForeColor = System.Drawing.Color.White;
+            this.HandleBar.Location = new System.Drawing.Point(0, 632);
+            this.HandleBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.HandleBar.MaximumSize = new System.Drawing.Size(0, 60);
+            this.HandleBar.MinimumSize = new System.Drawing.Size(60, 60);
+            this.HandleBar.Name = "HandleBar";
+            this.HandleBar.Size = new System.Drawing.Size(1216, 60);
+            this.HandleBar.TabIndex = 3;
+            this.HandleBar.Text = "windowsUIButtonPanelMain";
+            this.HandleBar.UseButtonBackgroundImages = false;
+            this.HandleBar.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.HandleBar_ButtonClick);
             // 
             // labelControl
             // 
@@ -103,7 +106,7 @@
             this.labelControl.Location = new System.Drawing.Point(0, 0);
             this.labelControl.Name = "labelControl";
             this.labelControl.Padding = new System.Windows.Forms.Padding(10, 5, 0, 0);
-            this.labelControl.Size = new System.Drawing.Size(546, 30);
+            this.labelControl.Size = new System.Drawing.Size(1216, 30);
             this.labelControl.TabIndex = 1;
             this.labelControl.Text = "Edit Contact";
             // 
@@ -141,16 +144,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(278, 26);
             this.txtEmail.TabIndex = 57;
-            // 
-            // txtGroup
-            // 
-            this.txtGroup.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGroup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtGroup.Location = new System.Drawing.Point(185, 188);
-            this.txtGroup.Name = "txtGroup";
-            this.txtGroup.Size = new System.Drawing.Size(278, 26);
-            this.txtGroup.TabIndex = 56;
             // 
             // label4
             // 
@@ -281,6 +274,7 @@
             this.txtId.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtId.Location = new System.Drawing.Point(185, 35);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(143, 26);
             this.txtId.TabIndex = 62;
             // 
@@ -296,6 +290,29 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "ID:";
             // 
+            // gvContacts
+            // 
+            this.gvContacts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gvContacts.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.gvContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvContacts.Location = new System.Drawing.Point(469, 36);
+            this.gvContacts.Name = "gvContacts";
+            this.gvContacts.Size = new System.Drawing.Size(735, 574);
+            this.gvContacts.TabIndex = 63;
+            this.gvContacts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvContacts_CellDoubleClick);
+            // 
+            // cbGroups
+            // 
+            this.cbGroups.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.cbGroups.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.cbGroups.FormattingEnabled = true;
+            this.cbGroups.Location = new System.Drawing.Point(186, 187);
+            this.cbGroups.Name = "cbGroups";
+            this.cbGroups.Size = new System.Drawing.Size(277, 27);
+            this.cbGroups.TabIndex = 64;
+            this.cbGroups.SelectedIndexChanged += new System.EventHandler(this.cbGroups_SelectedIndexChanged);
+            // 
             // editContact
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -303,14 +320,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(546, 692);
+            this.ClientSize = new System.Drawing.Size(1216, 692);
+            this.Controls.Add(this.cbGroups);
+            this.Controls.Add(this.gvContacts);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.upImgBtn);
             this.Controls.Add(this.Avatar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtGroup);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtAddress);
@@ -322,22 +340,23 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelControl);
-            this.Controls.Add(this.saveBtn);
+            this.Controls.Add(this.HandleBar);
             this.Name = "editContact";
+            this.Load += new System.EventHandler(this.editContact_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvContacts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel saveBtn;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel HandleBar;
         private DevExpress.XtraEditors.LabelControl labelControl;
         private System.Windows.Forms.Button upImgBtn;
         private System.Windows.Forms.PictureBox Avatar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtGroup;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtAddress;
@@ -350,6 +369,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView gvContacts;
+        private System.Windows.Forms.ComboBox cbGroups;
     }
 
 }

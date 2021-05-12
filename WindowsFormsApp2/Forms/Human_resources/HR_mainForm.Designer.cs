@@ -36,39 +36,35 @@
             this.lbUser = new DevExpress.XtraEditors.LabelControl();
             this.lbname = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txtCt_Id = new DevExpress.XtraEditors.TextEdit();
             this.removeCtBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.slContactBtn = new DevExpress.XtraEditors.SimpleButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.txtGroup_id = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtGroupname = new DevExpress.XtraEditors.TextEdit();
             this.addGroupBtn = new DevExpress.XtraEditors.SimpleButton();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.cbEditGroup = new System.Windows.Forms.ComboBox();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.txtNewname = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.EditGroupBtn = new DevExpress.XtraEditors.SimpleButton();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.cbRemoveGroup = new System.Windows.Forms.ComboBox();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.removeGroupBtn = new DevExpress.XtraEditors.SimpleButton();
             this.showCtBtn = new DevExpress.XtraEditors.SimpleButton();
             this.editCtBtn = new DevExpress.XtraEditors.SimpleButton();
             this.addCTbtn = new DevExpress.XtraEditors.SimpleButton();
             this.avatar = new System.Windows.Forms.PictureBox();
-            this.cbEditGroup = new System.Windows.Forms.ComboBox();
-            this.txtGroup_id = new DevExpress.XtraEditors.TextEdit();
-            this.cbRemoveGroup = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCt_Id.Properties)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGroup_id.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGroupname.Properties)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNewname.Properties)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGroup_id.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -146,57 +142,25 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.labelControl5);
-            this.panel1.Controls.Add(this.txtCt_Id);
             this.panel1.Controls.Add(this.removeCtBtn);
-            this.panel1.Controls.Add(this.slContactBtn);
-            this.panel1.Location = new System.Drawing.Point(12, 203);
+            this.panel1.Controls.Add(this.editCtBtn);
+            this.panel1.Controls.Add(this.addCTbtn);
+            this.panel1.Location = new System.Drawing.Point(12, 162);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(308, 126);
+            this.panel1.Size = new System.Drawing.Size(308, 143);
             this.panel1.TabIndex = 7;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(3, 8);
-            this.labelControl5.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(139, 19);
-            this.labelControl5.TabIndex = 12;
-            this.labelControl5.Text = "Enter contact ID:";
-            // 
-            // txtCt_Id
-            // 
-            this.txtCt_Id.Location = new System.Drawing.Point(3, 32);
-            this.txtCt_Id.Name = "txtCt_Id";
-            this.txtCt_Id.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txtCt_Id.Properties.Appearance.Options.UseFont = true;
-            this.txtCt_Id.Size = new System.Drawing.Size(159, 24);
-            this.txtCt_Id.TabIndex = 2;
             // 
             // removeCtBtn
             // 
             this.removeCtBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.removeCtBtn.Appearance.Options.UseFont = true;
             this.removeCtBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("removeCtBtn.ImageOptions.Image")));
-            this.removeCtBtn.Location = new System.Drawing.Point(3, 74);
+            this.removeCtBtn.Location = new System.Drawing.Point(8, 90);
             this.removeCtBtn.Name = "removeCtBtn";
-            this.removeCtBtn.Size = new System.Drawing.Size(297, 36);
+            this.removeCtBtn.Size = new System.Drawing.Size(291, 36);
             this.removeCtBtn.TabIndex = 1;
             this.removeCtBtn.Text = "Remove Contact";
-            // 
-            // slContactBtn
-            // 
-            this.slContactBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.slContactBtn.Appearance.Options.UseFont = true;
-            this.slContactBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("slContactBtn.ImageOptions.Image")));
-            this.slContactBtn.Location = new System.Drawing.Point(164, 27);
-            this.slContactBtn.Name = "slContactBtn";
-            this.slContactBtn.Size = new System.Drawing.Size(136, 34);
-            this.slContactBtn.TabIndex = 0;
-            this.slContactBtn.Text = "Select Contact";
+            this.removeCtBtn.Click += new System.EventHandler(this.removeCtBtn_Click);
             // 
             // panel4
             // 
@@ -222,6 +186,15 @@
             this.labelControl8.Size = new System.Drawing.Size(84, 19);
             this.labelControl8.TabIndex = 18;
             this.labelControl8.Text = "Group ID: ";
+            // 
+            // txtGroup_id
+            // 
+            this.txtGroup_id.Location = new System.Drawing.Point(153, 36);
+            this.txtGroup_id.Name = "txtGroup_id";
+            this.txtGroup_id.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtGroup_id.Properties.Appearance.Options.UseFont = true;
+            this.txtGroup_id.Size = new System.Drawing.Size(159, 24);
+            this.txtGroup_id.TabIndex = 17;
             // 
             // labelControl6
             // 
@@ -251,7 +224,7 @@
             this.addGroupBtn.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 11F);
             this.addGroupBtn.AppearanceHovered.Options.UseFont = true;
             this.addGroupBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.addGroupBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.addGroupBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("addGroupBtn.ImageOptions.Image")));
             this.addGroupBtn.Location = new System.Drawing.Point(318, 37);
             this.addGroupBtn.Name = "addGroupBtn";
             this.addGroupBtn.Size = new System.Drawing.Size(67, 22);
@@ -271,6 +244,14 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(392, 67);
             this.panel5.TabIndex = 9;
+            // 
+            // cbEditGroup
+            // 
+            this.cbEditGroup.FormattingEnabled = true;
+            this.cbEditGroup.Location = new System.Drawing.Point(146, 3);
+            this.cbEditGroup.Name = "cbEditGroup";
+            this.cbEditGroup.Size = new System.Drawing.Size(159, 21);
+            this.cbEditGroup.TabIndex = 19;
             // 
             // labelControl9
             // 
@@ -328,6 +309,14 @@
             this.panel6.Size = new System.Drawing.Size(392, 67);
             this.panel6.TabIndex = 9;
             // 
+            // cbRemoveGroup
+            // 
+            this.cbRemoveGroup.FormattingEnabled = true;
+            this.cbRemoveGroup.Location = new System.Drawing.Point(146, 19);
+            this.cbRemoveGroup.Name = "cbRemoveGroup";
+            this.cbRemoveGroup.Size = new System.Drawing.Size(159, 21);
+            this.cbRemoveGroup.TabIndex = 21;
+            // 
             // labelControl10
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -353,9 +342,9 @@
             // showCtBtn
             // 
             this.showCtBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("showCtBtn.ImageOptions.Image")));
-            this.showCtBtn.Location = new System.Drawing.Point(15, 335);
+            this.showCtBtn.Location = new System.Drawing.Point(15, 311);
             this.showCtBtn.Name = "showCtBtn";
-            this.showCtBtn.Size = new System.Drawing.Size(308, 42);
+            this.showCtBtn.Size = new System.Drawing.Size(308, 67);
             this.showCtBtn.TabIndex = 2;
             this.showCtBtn.Text = "Show full contact";
             this.showCtBtn.Click += new System.EventHandler(this.showCtBtn_Click);
@@ -365,9 +354,9 @@
             this.editCtBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.editCtBtn.Appearance.Options.UseFont = true;
             this.editCtBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("editCtBtn.ImageOptions.Image")));
-            this.editCtBtn.Location = new System.Drawing.Point(181, 162);
+            this.editCtBtn.Location = new System.Drawing.Point(171, 24);
             this.editCtBtn.Name = "editCtBtn";
-            this.editCtBtn.Size = new System.Drawing.Size(139, 35);
+            this.editCtBtn.Size = new System.Drawing.Size(128, 43);
             this.editCtBtn.TabIndex = 11;
             this.editCtBtn.Text = "Edit Contact";
             this.editCtBtn.Click += new System.EventHandler(this.editCtBtn_Click);
@@ -380,9 +369,9 @@
             this.addCTbtn.AppearanceHovered.Options.UseFont = true;
             this.addCTbtn.Cursor = System.Windows.Forms.Cursors.Default;
             this.addCTbtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("addCTbtn.ImageOptions.Image")));
-            this.addCTbtn.Location = new System.Drawing.Point(12, 162);
+            this.addCTbtn.Location = new System.Drawing.Point(8, 25);
             this.addCTbtn.Name = "addCTbtn";
-            this.addCTbtn.Size = new System.Drawing.Size(163, 35);
+            this.addCTbtn.Size = new System.Drawing.Size(157, 42);
             this.addCTbtn.TabIndex = 10;
             this.addCTbtn.Text = "Add Contact";
             this.addCTbtn.Click += new System.EventHandler(this.addCTbtn_Click);
@@ -398,39 +387,12 @@
             this.avatar.TabIndex = 6;
             this.avatar.TabStop = false;
             // 
-            // cbEditGroup
-            // 
-            this.cbEditGroup.FormattingEnabled = true;
-            this.cbEditGroup.Location = new System.Drawing.Point(146, 3);
-            this.cbEditGroup.Name = "cbEditGroup";
-            this.cbEditGroup.Size = new System.Drawing.Size(159, 21);
-            this.cbEditGroup.TabIndex = 19;
-            // 
-            // txtGroup_id
-            // 
-            this.txtGroup_id.Location = new System.Drawing.Point(153, 36);
-            this.txtGroup_id.Name = "txtGroup_id";
-            this.txtGroup_id.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txtGroup_id.Properties.Appearance.Options.UseFont = true;
-            this.txtGroup_id.Size = new System.Drawing.Size(159, 24);
-            this.txtGroup_id.TabIndex = 17;
-            // 
-            // cbRemoveGroup
-            // 
-            this.cbRemoveGroup.FormattingEnabled = true;
-            this.cbRemoveGroup.Location = new System.Drawing.Point(146, 19);
-            this.cbRemoveGroup.Name = "cbRemoveGroup";
-            this.cbRemoveGroup.Size = new System.Drawing.Size(159, 21);
-            this.cbRemoveGroup.TabIndex = 21;
-            // 
             // HR_mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 390);
             this.Controls.Add(this.showCtBtn);
-            this.Controls.Add(this.editCtBtn);
-            this.Controls.Add(this.addCTbtn);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
@@ -447,10 +409,9 @@
             this.Text = "HR_mainForm";
             this.Load += new System.EventHandler(this.HR_mainForm_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCt_Id.Properties)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGroup_id.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGroupname.Properties)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -458,7 +419,6 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGroup_id.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,12 +441,9 @@
         private DevExpress.XtraEditors.SimpleButton editCtBtn;
         private DevExpress.XtraEditors.SimpleButton addGroupBtn;
         private DevExpress.XtraEditors.SimpleButton removeCtBtn;
-        private DevExpress.XtraEditors.SimpleButton slContactBtn;
         private DevExpress.XtraEditors.SimpleButton EditGroupBtn;
         private DevExpress.XtraEditors.SimpleButton removeGroupBtn;
         private DevExpress.XtraEditors.SimpleButton showCtBtn;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txtCt_Id;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit txtGroupname;

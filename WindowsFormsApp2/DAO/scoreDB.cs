@@ -68,5 +68,145 @@ namespace WindowsFormsApp2.DAO
                 return false;
             }
         }
+        public static string getCnameByCid(int cid)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT dbo.getCnameByCid(@cid)", db.getConnection());
+            cmd.Parameters.Add("@cid", SqlDbType.Int).Value = cid;
+            db.openConnection();
+            string name = cmd.ExecuteScalar().ToString();
+            db.closeConnection();
+            return name;
+        }
+
+        public static DataTable getScoreByCid(int cid)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT student.id ,stdScore as "+getCnameByCid(cid)+" FROM student LEFT JOIN Score ON student.id = Score.sid AND cid =@cid", db.getConnection());
+            cmd.Parameters.Add("@cid", SqlDbType.Int).Value = cid;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+        public static DataTable getAllStdAvgScore()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT student.id, avg(stdScore) as 'Average Score' FROM student LEFT JOIN Score ON student.id = Score.sid GROUP BY student.id", db.getConnection());
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
+        public static DataTable getListResult()
+        {
+            DataTable listCourse = courseDB.getListCourse();
+            DataTable rs = new DataTable();
+            rs = studentDB.getListStudent();
+            for (int i = 3; i < rs.Columns.Count + (i - 3); i++)
+            {
+                rs.Columns.RemoveAt(3);
+            }
+            List<DataTable> tables = new List<DataTable>();
+            tables.Add(rs);
+            //get all score by course_id
+            foreach (DataRow row in listCourse.Rows)
+            {
+                int cid = row.Field<int>("id");
+                DataTable dt = getScoreByCid(cid);
+                tables.Add(dt);
+            }
+            //get average_score && results of student
+            rs = getAllStdAvgScore();
+            rs.Columns.Add("Result",typeof(string));
+            //show result by score
+            foreach (DataRow row in rs.Rows)
+            {
+                string type = "";
+                if (row["Average Score"].ToString() != "")
+                {
+                    double avgScore = row.Field<double>("Average Score");
+                    if (avgScore > 0 && avgScore < 10)
+                    {
+                        if (avgScore < 5)
+                        {
+                            type = "Rớt👎";
+                        }
+                        else if (avgScore < 6.5)
+                        {
+                            type = "Trung bình👌";
+                        }
+                        else if (avgScore < 8)
+                        {
+                            type = "Khá👏";
+                        }
+                        else if (avgScore < 10)
+                        {
+                            type = "Giỏi 🙌";
+                        }
+                        else
+                        {
+                            type = "Xuất sắc🤩🤩🤩";
+                        }
+                    }
+                    else
+                    {
+                        type = "Sai điểm ⚠️";
+                    }
+                }
+                else type = "Chưa có điểm";
+                row["Result"] = type;
+            }
+            tables.Add(rs);
+            rs = tables.MergeAll("id");
+            return rs;
+        }
+        public static DataTable MergeAll(this IList<DataTable> tables, String primaryKeyColumn)
+        {
+            if (!tables.Any())
+                throw new ArgumentException("Tables must not be empty", "tables");
+            if (primaryKeyColumn != null)
+                foreach (DataTable t in tables)
+                    if (!t.Columns.Contains(primaryKeyColumn))
+                        throw new ArgumentException("All tables must have the specified primarykey column " + primaryKeyColumn, "primaryKeyColumn");
+
+            if (tables.Count == 1)
+                return tables[0];
+
+            DataTable table = new DataTable("TblUnion");
+            table.BeginLoadData(); // Turns off notifications, index maintenance, and constraints while loading data
+            foreach (DataTable t in tables)
+            {
+                table.Merge(t); // same as table.Merge(t, false, MissingSchemaAction.Add);
+            }
+            table.EndLoadData();
+
+            if (primaryKeyColumn != null)
+            {
+                // since we might have no real primary keys defined, the rows now might have repeating fields
+                // so now we're going to "join" these rows ...
+                var pkGroups = table.AsEnumerable()
+                    .GroupBy(r => r[primaryKeyColumn]);
+                var dupGroups = pkGroups.Where(g => g.Count() > 1);
+                foreach (var grpDup in dupGroups)
+                {
+                    // use first row and modify it
+                    DataRow firstRow = grpDup.First();
+                    foreach (DataColumn c in table.Columns)
+                    {
+                        if (firstRow.IsNull(c))
+                        {
+                            DataRow firstNotNullRow = grpDup.Skip(1).FirstOrDefault(r => !r.IsNull(c));
+                            if (firstNotNullRow != null)
+                                firstRow[c] = firstNotNullRow[c];
+                        }
+                    }
+                    // remove all but first row
+                    var rowsToRemove = grpDup.Skip(1);
+                    foreach (DataRow rowToRemove in rowsToRemove)
+                        table.Rows.Remove(rowToRemove);
+                }
+            }
+
+            return table;
+        }
     }
 }

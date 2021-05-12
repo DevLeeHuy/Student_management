@@ -31,7 +31,7 @@
         {
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addContact));
-            this.windowsUIButtonPanelMain = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.addContactBtn = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.labelControl = new DevExpress.XtraEditors.LabelControl();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -42,49 +42,49 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtGroup = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.upImgBtn = new System.Windows.Forms.Button();
             this.Avatar = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.cbGroups = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).BeginInit();
             this.SuspendLayout();
             // 
-            // windowsUIButtonPanelMain
+            // addContactBtn
             // 
-            this.windowsUIButtonPanelMain.AppearanceButton.Hovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.windowsUIButtonPanelMain.AppearanceButton.Hovered.FontSizeDelta = -1;
-            this.windowsUIButtonPanelMain.AppearanceButton.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.windowsUIButtonPanelMain.AppearanceButton.Hovered.Options.UseBackColor = true;
-            this.windowsUIButtonPanelMain.AppearanceButton.Hovered.Options.UseFont = true;
-            this.windowsUIButtonPanelMain.AppearanceButton.Hovered.Options.UseForeColor = true;
-            this.windowsUIButtonPanelMain.AppearanceButton.Normal.FontSizeDelta = -1;
-            this.windowsUIButtonPanelMain.AppearanceButton.Normal.Options.UseFont = true;
-            this.windowsUIButtonPanelMain.AppearanceButton.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
-            this.windowsUIButtonPanelMain.AppearanceButton.Pressed.FontSizeDelta = -1;
-            this.windowsUIButtonPanelMain.AppearanceButton.Pressed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
-            this.windowsUIButtonPanelMain.AppearanceButton.Pressed.Options.UseBackColor = true;
-            this.windowsUIButtonPanelMain.AppearanceButton.Pressed.Options.UseFont = true;
-            this.windowsUIButtonPanelMain.AppearanceButton.Pressed.Options.UseForeColor = true;
-            this.windowsUIButtonPanelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.addContactBtn.AppearanceButton.Hovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.addContactBtn.AppearanceButton.Hovered.FontSizeDelta = -1;
+            this.addContactBtn.AppearanceButton.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
+            this.addContactBtn.AppearanceButton.Hovered.Options.UseBackColor = true;
+            this.addContactBtn.AppearanceButton.Hovered.Options.UseFont = true;
+            this.addContactBtn.AppearanceButton.Hovered.Options.UseForeColor = true;
+            this.addContactBtn.AppearanceButton.Normal.FontSizeDelta = -1;
+            this.addContactBtn.AppearanceButton.Normal.Options.UseFont = true;
+            this.addContactBtn.AppearanceButton.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            this.addContactBtn.AppearanceButton.Pressed.FontSizeDelta = -1;
+            this.addContactBtn.AppearanceButton.Pressed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            this.addContactBtn.AppearanceButton.Pressed.Options.UseBackColor = true;
+            this.addContactBtn.AppearanceButton.Pressed.Options.UseFont = true;
+            this.addContactBtn.AppearanceButton.Pressed.Options.UseForeColor = true;
+            this.addContactBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             windowsUIButtonImageOptions1.ImageUri.Uri = "Save;Size32x32;GrayScaled";
             windowsUIButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions1.SvgImage")));
-            this.windowsUIButtonPanelMain.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            this.addContactBtn.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Add new contact", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
-            this.windowsUIButtonPanelMain.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.windowsUIButtonPanelMain.EnableImageTransparency = true;
-            this.windowsUIButtonPanelMain.ForeColor = System.Drawing.Color.White;
-            this.windowsUIButtonPanelMain.Location = new System.Drawing.Point(0, 675);
-            this.windowsUIButtonPanelMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.windowsUIButtonPanelMain.MaximumSize = new System.Drawing.Size(0, 60);
-            this.windowsUIButtonPanelMain.MinimumSize = new System.Drawing.Size(60, 60);
-            this.windowsUIButtonPanelMain.Name = "windowsUIButtonPanelMain";
-            this.windowsUIButtonPanelMain.Size = new System.Drawing.Size(487, 60);
-            this.windowsUIButtonPanelMain.TabIndex = 3;
-            this.windowsUIButtonPanelMain.Text = "windowsUIButtonPanelMain";
-            this.windowsUIButtonPanelMain.UseButtonBackgroundImages = false;
-            this.windowsUIButtonPanelMain.Click += new System.EventHandler(this.windowsUIButtonPanelMain_Click);
+            this.addContactBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.addContactBtn.EnableImageTransparency = true;
+            this.addContactBtn.ForeColor = System.Drawing.Color.White;
+            this.addContactBtn.Location = new System.Drawing.Point(0, 675);
+            this.addContactBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.addContactBtn.MaximumSize = new System.Drawing.Size(0, 60);
+            this.addContactBtn.MinimumSize = new System.Drawing.Size(60, 60);
+            this.addContactBtn.Name = "addContactBtn";
+            this.addContactBtn.Size = new System.Drawing.Size(487, 60);
+            this.addContactBtn.TabIndex = 3;
+            this.addContactBtn.Text = "windowsUIButtonPanelMain";
+            this.addContactBtn.UseButtonBackgroundImages = false;
+            this.addContactBtn.Click += new System.EventHandler(this.addContactBtn_Click);
             // 
             // labelControl
             // 
@@ -103,7 +103,6 @@
             this.labelControl.Size = new System.Drawing.Size(487, 30);
             this.labelControl.TabIndex = 1;
             this.labelControl.Text = "Add new contact";
-            this.labelControl.Click += new System.EventHandler(this.labelControl_Click);
             // 
             // txtAddress
             // 
@@ -203,16 +202,6 @@
             this.txtEmail.Size = new System.Drawing.Size(278, 26);
             this.txtEmail.TabIndex = 27;
             // 
-            // txtGroup
-            // 
-            this.txtGroup.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGroup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtGroup.Location = new System.Drawing.Point(172, 176);
-            this.txtGroup.Name = "txtGroup";
-            this.txtGroup.Size = new System.Drawing.Size(278, 26);
-            this.txtGroup.TabIndex = 26;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -272,6 +261,16 @@
             this.label8.TabIndex = 28;
             this.label8.Text = "Picture";
             // 
+            // cbGroups
+            // 
+            this.cbGroups.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.cbGroups.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.cbGroups.FormattingEnabled = true;
+            this.cbGroups.Location = new System.Drawing.Point(173, 176);
+            this.cbGroups.Name = "cbGroups";
+            this.cbGroups.Size = new System.Drawing.Size(277, 27);
+            this.cbGroups.TabIndex = 31;
+            // 
             // addContact
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -280,11 +279,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(487, 735);
+            this.Controls.Add(this.cbGroups);
             this.Controls.Add(this.upImgBtn);
             this.Controls.Add(this.Avatar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtGroup);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtAddress);
@@ -296,7 +295,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelControl);
-            this.Controls.Add(this.windowsUIButtonPanelMain);
+            this.Controls.Add(this.addContactBtn);
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("addContact.IconOptions.SvgImage")));
             this.Name = "addContact";
             this.Text = "Add new contact";
@@ -307,7 +306,7 @@
         }
 
         #endregion
-        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanelMain;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel addContactBtn;
         private DevExpress.XtraEditors.LabelControl labelControl;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPhone;
@@ -318,12 +317,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtGroup;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button upImgBtn;
         private System.Windows.Forms.PictureBox Avatar;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbGroups;
     }
 
 }

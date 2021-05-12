@@ -36,7 +36,7 @@ namespace WindowsFormsApp2.model
         }
         public static bool updateContact(int contactId, string fname, string lname, string phone, string address, string email, int gid, MemoryStream pic)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE contact SET lname = @lname, fname = @fname, group_id=@gid, email = @email," +
+            SqlCommand cmd = new SqlCommand("UPDATE contact SET lname = @lname, fname = @fname, gid=@gid, email = @email," +
                "phone = @phone, address = @address, img = @img WHERE id = @id", db.getConnection());
             cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = contactId;
@@ -82,12 +82,21 @@ namespace WindowsFormsApp2.model
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
-
-
         }
-        public static DataTable getListContact()
+        public static DataTable getListContact(int id)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM contact", db.getConnection());
+            SqlCommand cmd = new SqlCommand("SELECT * FROM contact WHERE uid = @id", db.getConnection());
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+        public static DataTable getListContactByGroup(int uid,int gid)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM contact WHERE uid = @uid AND gid = @gid", db.getConnection());
+            cmd.Parameters.Add("@uid", SqlDbType.Int).Value = uid;
+            cmd.Parameters.Add("@gid", SqlDbType.Int).Value = gid;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp2.Forms.Register_Course;
 
 namespace WindowsFormsApp2.Forms
 {
@@ -234,14 +235,12 @@ namespace WindowsFormsApp2.Forms
             }
         }
 
-        private void lbTotal_Click(object sender, EventArgs e)
+
+
+        private void addCourseBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pnTotal_Paint(object sender, PaintEventArgs e)
-        {
-
+            Form addCourse = new RegisterCourse();
+            addCourse.ShowDialog();
         }
     }
 }

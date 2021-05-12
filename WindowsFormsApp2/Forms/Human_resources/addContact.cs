@@ -12,23 +12,22 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using DevExpress.XtraLayout.Helpers;
 using DevExpress.XtraLayout;
+using WindowsFormsApp2.model;
+
 
 namespace WindowsFormsApp2.Forms.Human_resources
 {
     public partial class addContact : DevExpress.XtraEditors.XtraForm
     {
+        int uid = Globals.user.Field<int>("id");
         public addContact()
         {
             InitializeComponent();
-
-           
+            cbGroups.DataSource = group.getListGroup(uid);
+            cbGroups.DisplayMember = "name";
+            cbGroups.ValueMember = "id";
         }
-        
-        private void windowsUIButtonPanelMain_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Add successfully", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
+ 
         private void upImgBtn_Click(object sender, EventArgs e)
         {
             try
@@ -47,8 +46,35 @@ namespace WindowsFormsApp2.Forms.Human_resources
             }
         }
 
-        private void labelControl_Click(object sender, EventArgs e)
+        private void addContactBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string fname = txtFname.Text;
+                string lname = txtLname.Text;
+                string email = txtEmail.Text;
+                string phone = txtPhone.Text;
+                string address = txtAddress.Text;
+                int gid = Convert.ToInt32(cbGroups.SelectedValue);
+
+                //File.Copy(Avatar.ImageLocation, Path.Combine(Application.StartupPath + "\\Images\\", Path.GetFileName(Avatar.ImageLocation)), true);
+                MemoryStream pic = new MemoryStream();
+                Avatar.Image.Save(pic, Avatar.Image.RawFormat);
+               
+                if (contact.insertContact(fname,lname,phone,address,email,uid,gid,pic))
+                {
+                    MessageBox.Show("Add successfully", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Can not add this contact", "Unsuccessful");
+                }
+                
+            }
+            catch
+            {
+                MessageBox.Show("Something was wrong!!!");
+            }
 
         }
     }

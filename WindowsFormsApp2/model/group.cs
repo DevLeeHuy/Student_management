@@ -70,5 +70,21 @@ namespace WindowsFormsApp2.model
             da.Fill(dt);
             return dt;
         }
+        public static bool groupExist(string name, int uid = 0)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM groups WHERE  name=@name AND uid=@uid ", db.getConnection());
+            cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
+            cmd.Parameters.Add("@uid", SqlDbType.Int).Value = uid;
+            db.openConnection();
+            if (cmd.ExecuteScalar() != null)
+            {
+                db.closeConnection();
+                return true;
+            }
+
+            db.closeConnection();
+
+            return false;
+        }
     }
 }

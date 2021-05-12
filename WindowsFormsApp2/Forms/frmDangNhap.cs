@@ -47,7 +47,7 @@ namespace WindowsFormsApp2
             }
             if (valid.Rows.Count > 0)
             {
-                Globals.setUserID(valid);
+                Globals.setUser(valid.Rows[0]);
                 Form mainform = new Form();
                 if(ckb.Text == "Student")
                 {
