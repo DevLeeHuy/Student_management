@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,20 +19,21 @@ namespace ManagementApp.Forms.Register_Course
         public RegisterCourse()
         {
             InitializeComponent();
-            lboxCou.DataSource = courseDB.getListCourse();
+            
             //lboxCou.SelectedItem = "id";
-            lboxCou.ValueMember = "id";
-            lboxCou.DisplayMember = "label";
-
-            lboxSelect.DisplayMember = "label";
+            
 
             cbSem.Items.Clear();
-            cbSem.Items.Add("--Select--");
             for (int i = 1; i<=3; i++)
             {
                 cbSem.Items.Add(i);
             }
             cbSem.SelectedIndex = 0;
+            lboxCou.DataSource = courseDB.getCourseBySemester(1);
+            lboxCou.ValueMember = "id";
+            lboxCou.DisplayMember = "label";
+
+            lboxSelect.DisplayMember = "label";
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -47,7 +49,7 @@ namespace ManagementApp.Forms.Register_Course
         private void delBtn_Click(object sender, EventArgs e)
         {
             listCourses.Remove(Convert.ToInt32(lboxSelect.SelectedValue));
-            lboxSelect.Items.Remove(lboxCou.SelectedItem);
+            lboxSelect.Items.Remove(lboxSelect.SelectedItem);
         }
         private void clrBtn_Click(object sender, EventArgs e)
         {
@@ -57,26 +59,55 @@ namespace ManagementApp.Forms.Register_Course
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            int stdID = Convert.ToInt32(txtStdId.Text);
-            int semester = Convert.ToInt32(cbSem.SelectedValue);
-            int check = 0;
-            foreach(int courseID in listCourses)
+            try
             {
-                Score temp = new Score(stdID, courseID,null, "");
-                if (scoreDB.addScore(temp))
+                int stdID = Convert.ToInt32(txtStdId.Text);
+                int semester = Convert.ToInt32(cbSem.SelectedValue);
+                int check = 0;
+                foreach (int courseID in listCourses)
                 {
-                    check++;
+
+                    if (!scoreDB.exist(stdID, courseID))
+                    {
+                        Score temp = new Score(stdID, courseID, null, "");
+                        if (scoreDB.addStudy(temp))
+                        {
+                            check++;
+                        }
+                    }
+                    else check++;
+                   
                 }
+                if (check == listCourses.Count)
+                {
+                    MessageBox.Show("Save successfully 👌👌");
+                }
+                else
+                    MessageBox.Show("Can not save 😮😮");
             }
-            if (check == listCourses.Count)
+            catch(Exception ex)
             {
-                MessageBox.Show("Save successfully 👌👌");
+                MessageBox.Show("Cannot register!! " + ex.Message);
             }
-            else
-                MessageBox.Show("Can not save 😮😮");
-            
         }
 
+        private void cbSem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                lboxCou.DataSource = courseDB.getCourseBySemester(Convert.ToInt32(cbSem.SelectedItem));
+            }
+            catch { }
+        }
 
+        private void addAllBtn_Click(object sender, EventArgs e)
+        {
+            foreach (DataRow row in courseDB.getCourseBySemester(Convert.ToInt32(cbSem.SelectedItem)).Rows)
+            {
+                int id = Convert.ToInt32(row["id"]);
+                listCourses.Add(id);
+                lboxSelect.Items.Add(row["label"]);
+            }
+        }
     }
 }

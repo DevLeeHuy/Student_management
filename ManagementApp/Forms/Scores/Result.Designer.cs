@@ -29,9 +29,8 @@
         ///
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Result));
             this.windowsUIButtonPanel = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.gvResult = new DevExpress.XtraGrid.GridControl();
@@ -39,14 +38,12 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtLname = new System.Windows.Forms.TextBox();
             this.txtFname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.searchBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.resultReport = new DevExpress.XtraReports.ReportGeneration.ReportGenerator(this.components);
+            this.cbSem = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -68,11 +65,11 @@
             this.windowsUIButtonPanel.AppearanceButton.Pressed.Options.UseFont = true;
             this.windowsUIButtonPanel.AppearanceButton.Pressed.Options.UseForeColor = true;
             this.windowsUIButtonPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            windowsUIButtonImageOptions1.ImageUri.Uri = "Preview;Size32x32;GrayScaled";
-            windowsUIButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions2.Image")));
+            windowsUIButtonImageOptions3.ImageUri.Uri = "Preview;Size32x32;GrayScaled";
+            windowsUIButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions4.Image")));
             this.windowsUIButtonPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Print", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Cancel", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Print", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Cancel", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.windowsUIButtonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.windowsUIButtonPanel.EnableImageTransparency = true;
             this.windowsUIButtonPanel.ForeColor = System.Drawing.Color.White;
@@ -89,16 +86,21 @@
             // 
             // gvResult
             // 
-            this.gvResult.Location = new System.Drawing.Point(320, 75);
+            this.gvResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gvResult.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gvResult.Location = new System.Drawing.Point(400, 94);
             this.gvResult.MainView = this.gridView1;
+            this.gvResult.Margin = new System.Windows.Forms.Padding(4);
             this.gvResult.Name = "gvResult";
-            this.gvResult.Size = new System.Drawing.Size(965, 415);
+            this.gvResult.Size = new System.Drawing.Size(884, 395);
             this.gvResult.TabIndex = 6;
             this.gvResult.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.DetailHeight = 437;
             this.gridView1.GridControl = this.gvResult;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsPrint.EnableAppearanceOddRow = true;
@@ -107,7 +109,8 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(495, 12);
+            this.labelControl1.Location = new System.Drawing.Point(619, 15);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(200, 33);
             this.labelControl1.TabIndex = 7;
@@ -136,16 +139,6 @@
             this.label1.TabIndex = 69;
             this.label1.Text = "StudentID:";
             // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtEmail.Location = new System.Drawing.Point(99, 262);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(215, 26);
-            this.txtEmail.TabIndex = 68;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -154,9 +147,9 @@
             this.label4.ForeColor = System.Drawing.Color.Snow;
             this.label4.Location = new System.Drawing.Point(12, 233);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(281, 26);
+            this.label4.Size = new System.Drawing.Size(121, 26);
             this.label4.TabIndex = 67;
-            this.label4.Text = "Search by id, firstname";
+            this.label4.Text = "Semester";
             // 
             // txtLname
             // 
@@ -202,14 +195,14 @@
             this.label2.TabIndex = 63;
             this.label2.Text = "First Name";
             // 
-            // searchBtn
+            // cbSem
             // 
-            this.searchBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("searchBtn.ImageOptions.Image")));
-            this.searchBtn.Location = new System.Drawing.Point(9, 262);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(91, 26);
-            this.searchBtn.TabIndex = 71;
-            this.searchBtn.Text = "Search";
+            this.cbSem.FormattingEnabled = true;
+            this.cbSem.Location = new System.Drawing.Point(147, 233);
+            this.cbSem.Name = "cbSem";
+            this.cbSem.Size = new System.Drawing.Size(61, 21);
+            this.cbSem.TabIndex = 71;
+            this.cbSem.SelectedIndexChanged += new System.EventHandler(this.cbSem_SelectedIndexChanged);
             // 
             // Result
             // 
@@ -218,10 +211,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1297, 558);
-            this.Controls.Add(this.searchBtn);
+            this.Controls.Add(this.cbSem);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtLname);
             this.Controls.Add(this.txtFname);
@@ -245,13 +237,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtLname;
         private System.Windows.Forms.TextBox txtFname;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.SimpleButton searchBtn;
-        private DevExpress.XtraReports.ReportGeneration.ReportGenerator resultReport;
+        private System.Windows.Forms.ComboBox cbSem;
     }
 }

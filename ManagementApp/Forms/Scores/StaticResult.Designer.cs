@@ -36,6 +36,8 @@
             this.lbTb = new System.Windows.Forms.Label();
             this.lbKha = new System.Windows.Forms.Label();
             this.llbGioi = new System.Windows.Forms.Label();
+            this.cbSem = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvAvgScore)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,11 +130,35 @@
             this.llbGioi.TabIndex = 5;
             this.llbGioi.Text = "GIỎI: 0";
             // 
+            // cbSem
+            // 
+            this.cbSem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSem.FormattingEnabled = true;
+            this.cbSem.Location = new System.Drawing.Point(361, 16);
+            this.cbSem.Name = "cbSem";
+            this.cbSem.Size = new System.Drawing.Size(61, 33);
+            this.cbSem.TabIndex = 73;
+            this.cbSem.SelectedIndexChanged += new System.EventHandler(this.cbSem_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Snow;
+            this.label4.Location = new System.Drawing.Point(234, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 26);
+            this.label4.TabIndex = 72;
+            this.label4.Text = "Semester";
+            // 
             // StaticResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbSem);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.gvAvgScore);
             this.Controls.Add(this.lbXs);
             this.Controls.Add(this.llbGioi);
@@ -160,5 +186,7 @@
         private System.Windows.Forms.Label lbTb;
         private System.Windows.Forms.Label lbKha;
         private System.Windows.Forms.Label llbGioi;
+        private System.Windows.Forms.ComboBox cbSem;
+        private System.Windows.Forms.Label label4;
     }
 }

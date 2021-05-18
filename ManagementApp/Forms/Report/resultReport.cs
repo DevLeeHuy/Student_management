@@ -11,7 +11,6 @@ namespace ManagementApp.Forms.Report
         public resultReport()
         {
             InitializeComponent();
-            
         }
 
     }

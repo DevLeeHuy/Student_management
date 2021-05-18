@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,13 @@ namespace ManagementApp.Forms.Courses
         public ManageCourseFrm()
         {
             InitializeComponent();
-            showListCourse(courseDB.getListCourse());
+            showListCourse(courseDB.getCourseBySemester(1));
+            cbSem.Items.Clear();
+            for (int i = 1; i <= 3; i++)
+            {
+                cbSem.Items.Add(i);
+            }
+            cbSem.SelectedIndex = 0;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -29,15 +36,15 @@ namespace ManagementApp.Forms.Courses
                 string label = txtLb.Text;
                 int period = Int32.Parse(txtPr.Text);
                 string des = txtDes.Text;
+                int semester = Convert.ToInt32(cbSem.SelectedItem);
                 if (period > 10)
                 {
                     if (!courseDB.courseExist(label))
                     {
-                        course newCourse = new course(id, label, period, des);
+                        course newCourse = new course(id, label, period, des, semester);
                         if (courseDB.insertCourse(newCourse))
                         {
                             MessageBox.Show("Add successfully");
-                            ManageCourseFrm_Load(sender, e);
                         }
                         else
                             MessageBox.Show("Something was Wrong!!!");
@@ -58,6 +65,8 @@ namespace ManagementApp.Forms.Courses
             {
                 MessageBox.Show("Something was Wrong!!!");
             }
+            ManageCourseFrm_Load(sender, e);
+
         }
 
         private void editBtn_Click(object sender, EventArgs e)
@@ -68,7 +77,9 @@ namespace ManagementApp.Forms.Courses
                 int period = Convert.ToInt32(txtPr.Text);
                 string des = txtDes.Text;
                 int id = Int32.Parse(txtId.Text);
-                course cou = new course(id, label, period, des);
+                int semester = Convert.ToInt32(cbSem.SelectedItem);
+
+                course cou = new course(id, label, period, des,semester);
                 if (courseDB.updateCourse(cou))
                 {
                     MessageBox.Show("Update successfully","Successful",MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -80,6 +91,7 @@ namespace ManagementApp.Forms.Courses
             {
                 MessageBox.Show("Something was wrong!!!\n"+ex,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            ManageCourseFrm_Load(sender, e);
            
         }
 
@@ -114,7 +126,7 @@ namespace ManagementApp.Forms.Courses
 
         private void ManageCourseFrm_Load(object sender, EventArgs e)
         {
-            showListCourse(courseDB.getListCourse());
+            showListCourse(courseDB.getCourseBySemester(Convert.ToInt32(cbSem.SelectedItem)));
             lboxCourse.SelectedIndex = 0;
         }
 
@@ -137,6 +149,8 @@ namespace ManagementApp.Forms.Courses
             {
                 //no...
             }
+            ManageCourseFrm_Load(sender, e);
+
         }
 
         private void listStdBtn_Click(object sender, EventArgs e)
@@ -274,7 +288,7 @@ namespace ManagementApp.Forms.Courses
                 {
                     Word.Range headerRange = section.Headers[Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range;
                     headerRange.Fields.Add(headerRange, Word.WdFieldType.wdFieldPage);
-                    headerRange.Text = "Điểm quá Trình";
+                    headerRange.Text = "Danh sách sinh viên";
                     headerRange.Font.Size = 16;
                     headerRange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
                 }
@@ -323,6 +337,15 @@ namespace ManagementApp.Forms.Courses
             txtLb.Text = c.Label;
             txtDes.Text = c.Description;
             txtPr.Text = c.Period.ToString();
+        }
+
+        private void cbSem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                lboxCourse.DataSource = courseDB.getCourseBySemester(Convert.ToInt32(cbSem.SelectedItem));
+            }
+            catch { }
         }
     }
 }

@@ -49,10 +49,9 @@
             this.txtId.BackColor = System.Drawing.Color.LavenderBlush;
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtId.Location = new System.Drawing.Point(306, 27);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtId.Location = new System.Drawing.Point(230, 22);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(369, 30);
+            this.txtId.Size = new System.Drawing.Size(278, 26);
             this.txtId.TabIndex = 10;
             // 
             // label1
@@ -61,10 +60,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(46, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(34, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 34);
+            this.label1.Size = new System.Drawing.Size(135, 26);
             this.label1.TabIndex = 9;
             this.label1.Text = "Student ID";
             // 
@@ -72,10 +70,10 @@
             // 
             this.lbCouID.AutoSize = true;
             this.lbCouID.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCouID.Location = new System.Drawing.Point(12, 79);
-            this.lbCouID.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbCouID.Location = new System.Drawing.Point(9, 64);
+            this.lbCouID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCouID.Name = "lbCouID";
-            this.lbCouID.Size = new System.Drawing.Size(208, 32);
+            this.lbCouID.Size = new System.Drawing.Size(161, 26);
             this.lbCouID.TabIndex = 12;
             this.lbCouID.Text = "Select Course: ";
             // 
@@ -84,10 +82,10 @@
             this.cboxCourse.BackColor = System.Drawing.Color.LavenderBlush;
             this.cboxCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxCourse.FormattingEnabled = true;
-            this.cboxCourse.Location = new System.Drawing.Point(306, 79);
-            this.cboxCourse.Margin = new System.Windows.Forms.Padding(6);
+            this.cboxCourse.Location = new System.Drawing.Point(230, 64);
+            this.cboxCourse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboxCourse.Name = "cboxCourse";
-            this.cboxCourse.Size = new System.Drawing.Size(229, 30);
+            this.cboxCourse.Size = new System.Drawing.Size(173, 25);
             this.cboxCourse.TabIndex = 11;
             this.cboxCourse.SelectedIndexChanged += new System.EventHandler(this.cboxCourse_SelectedIndexChanged);
             // 
@@ -95,9 +93,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(117, 140);
+            this.label2.Location = new System.Drawing.Point(88, 114);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 32);
+            this.label2.Size = new System.Drawing.Size(81, 26);
             this.label2.TabIndex = 13;
             this.label2.Text = "Score:";
             // 
@@ -106,39 +105,39 @@
             this.txtScore.BackColor = System.Drawing.Color.LavenderBlush;
             this.txtScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtScore.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtScore.Location = new System.Drawing.Point(306, 140);
-            this.txtScore.Margin = new System.Windows.Forms.Padding(4);
+            this.txtScore.Location = new System.Drawing.Point(230, 114);
             this.txtScore.Name = "txtScore";
-            this.txtScore.Size = new System.Drawing.Size(229, 30);
+            this.txtScore.Size = new System.Drawing.Size(173, 26);
             this.txtScore.TabIndex = 14;
             // 
             // txtDes
             // 
             this.txtDes.BackColor = System.Drawing.Color.LavenderBlush;
             this.txtDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDes.Location = new System.Drawing.Point(306, 191);
-            this.txtDes.Margin = new System.Windows.Forms.Padding(6);
+            this.txtDes.Location = new System.Drawing.Point(230, 155);
+            this.txtDes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDes.Multiline = true;
             this.txtDes.Name = "txtDes";
-            this.txtDes.Size = new System.Drawing.Size(344, 160);
+            this.txtDes.Size = new System.Drawing.Size(259, 131);
             this.txtDes.TabIndex = 16;
             // 
             // lbDes
             // 
             this.lbDes.AutoSize = true;
             this.lbDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDes.Location = new System.Drawing.Point(111, 206);
-            this.lbDes.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbDes.Location = new System.Drawing.Point(83, 167);
+            this.lbDes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDes.Name = "lbDes";
-            this.lbDes.Size = new System.Drawing.Size(109, 25);
+            this.lbDes.Size = new System.Drawing.Size(89, 20);
             this.lbDes.TabIndex = 15;
             this.lbDes.Text = "Description";
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(360, 360);
+            this.addBtn.Location = new System.Drawing.Point(270, 292);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(229, 99);
+            this.addBtn.Size = new System.Drawing.Size(172, 80);
             this.addBtn.TabIndex = 19;
             this.addBtn.Text = "ADD";
             this.addBtn.UseVisualStyleBackColor = true;
@@ -148,9 +147,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.Controls.Add(this.lbStudent);
-            this.panel1.Location = new System.Drawing.Point(865, 501);
+            this.panel1.Location = new System.Drawing.Point(649, 407);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 62);
+            this.panel1.Size = new System.Drawing.Size(206, 50);
             this.panel1.TabIndex = 71;
             // 
             // lbStudent
@@ -158,28 +158,31 @@
             this.lbStudent.AutoSize = true;
             this.lbStudent.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStudent.ForeColor = System.Drawing.Color.Coral;
-            this.lbStudent.Location = new System.Drawing.Point(3, 14);
+            this.lbStudent.Location = new System.Drawing.Point(2, 11);
+            this.lbStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbStudent.Name = "lbStudent";
-            this.lbStudent.Size = new System.Drawing.Size(211, 31);
+            this.lbStudent.Size = new System.Drawing.Size(170, 25);
             this.lbStudent.TabIndex = 0;
             this.lbStudent.Text = "Total Students:";
             // 
             // gvListStudent
             // 
+            this.gvListStudent.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.gvListStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvListStudent.Location = new System.Drawing.Point(682, 1);
+            this.gvListStudent.Location = new System.Drawing.Point(512, 1);
+            this.gvListStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gvListStudent.Name = "gvListStudent";
             this.gvListStudent.RowHeadersWidth = 51;
             this.gvListStudent.RowTemplate.Height = 24;
-            this.gvListStudent.Size = new System.Drawing.Size(457, 484);
+            this.gvListStudent.Size = new System.Drawing.Size(343, 393);
             this.gvListStudent.TabIndex = 72;
             this.gvListStudent.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvListStudent_CellDoubleClick);
             // 
             // AddScore
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1144, 568);
+            this.ClientSize = new System.Drawing.Size(858, 462);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gvListStudent);
             this.Controls.Add(this.addBtn);
@@ -191,6 +194,7 @@
             this.Controls.Add(this.cboxCourse);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddScore";
             this.Text = "AddScore";
             this.panel1.ResumeLayout(false);

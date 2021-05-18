@@ -40,6 +40,7 @@
             this.saveBtn = new System.Windows.Forms.Button();
             this.delBtn = new System.Windows.Forms.Button();
             this.clrBtn = new System.Windows.Forms.Button();
+            this.addAllBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtStdId
@@ -48,7 +49,7 @@
             this.txtStdId.Location = new System.Drawing.Point(189, 33);
             this.txtStdId.Margin = new System.Windows.Forms.Padding(4);
             this.txtStdId.Name = "txtStdId";
-            this.txtStdId.Size = new System.Drawing.Size(198, 37);
+            this.txtStdId.Size = new System.Drawing.Size(198, 31);
             this.txtStdId.TabIndex = 0;
             // 
             // cbSem
@@ -58,8 +59,9 @@
             this.cbSem.Location = new System.Drawing.Point(607, 33);
             this.cbSem.Margin = new System.Windows.Forms.Padding(4);
             this.cbSem.Name = "cbSem";
-            this.cbSem.Size = new System.Drawing.Size(195, 38);
+            this.cbSem.Size = new System.Drawing.Size(195, 33);
             this.cbSem.TabIndex = 1;
+            this.cbSem.SelectedIndexChanged += new System.EventHandler(this.cbSem_SelectedIndexChanged);
             // 
             // stdId
             // 
@@ -68,7 +70,7 @@
             this.stdId.Location = new System.Drawing.Point(20, 33);
             this.stdId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.stdId.Name = "stdId";
-            this.stdId.Size = new System.Drawing.Size(170, 31);
+            this.stdId.Size = new System.Drawing.Size(136, 25);
             this.stdId.TabIndex = 2;
             this.stdId.Text = "Student ID: ";
             // 
@@ -76,10 +78,10 @@
             // 
             this.semLb.AutoSize = true;
             this.semLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.semLb.Location = new System.Drawing.Point(429, 33);
+            this.semLb.Location = new System.Drawing.Point(474, 33);
             this.semLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.semLb.Name = "semLb";
-            this.semLb.Size = new System.Drawing.Size(155, 31);
+            this.semLb.Size = new System.Drawing.Size(125, 25);
             this.semLb.TabIndex = 3;
             this.semLb.Text = "Semester: ";
             // 
@@ -90,7 +92,7 @@
             this.AvaiLb.Location = new System.Drawing.Point(20, 110);
             this.AvaiLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AvaiLb.Name = "AvaiLb";
-            this.AvaiLb.Size = new System.Drawing.Size(267, 31);
+            this.AvaiLb.Size = new System.Drawing.Size(217, 25);
             this.AvaiLb.TabIndex = 4;
             this.AvaiLb.Text = "Available Courses: ";
             // 
@@ -101,7 +103,7 @@
             this.selectLb.Location = new System.Drawing.Point(606, 109);
             this.selectLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.selectLb.Name = "selectLb";
-            this.selectLb.Size = new System.Drawing.Size(128, 31);
+            this.selectLb.Size = new System.Drawing.Size(104, 25);
             this.selectLb.TabIndex = 5;
             this.selectLb.Text = "Selected";
             // 
@@ -109,22 +111,22 @@
             // 
             this.lboxCou.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lboxCou.FormattingEnabled = true;
-            this.lboxCou.ItemHeight = 30;
+            this.lboxCou.ItemHeight = 25;
             this.lboxCou.Location = new System.Drawing.Point(20, 139);
             this.lboxCou.Margin = new System.Windows.Forms.Padding(4);
             this.lboxCou.Name = "lboxCou";
-            this.lboxCou.Size = new System.Drawing.Size(403, 394);
+            this.lboxCou.Size = new System.Drawing.Size(403, 379);
             this.lboxCou.TabIndex = 6;
             // 
             // lboxSelect
             // 
             this.lboxSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lboxSelect.FormattingEnabled = true;
-            this.lboxSelect.ItemHeight = 30;
+            this.lboxSelect.ItemHeight = 25;
             this.lboxSelect.Location = new System.Drawing.Point(611, 138);
             this.lboxSelect.Margin = new System.Windows.Forms.Padding(4);
             this.lboxSelect.Name = "lboxSelect";
-            this.lboxSelect.Size = new System.Drawing.Size(400, 394);
+            this.lboxSelect.Size = new System.Drawing.Size(400, 379);
             this.lboxSelect.TabIndex = 7;
             // 
             // addBtn
@@ -135,7 +137,7 @@
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(82, 78);
             this.addBtn.TabIndex = 8;
-            this.addBtn.Text = "➕";
+            this.addBtn.Text = "▶️▶️";
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
@@ -159,14 +161,14 @@
             this.delBtn.Name = "delBtn";
             this.delBtn.Size = new System.Drawing.Size(82, 78);
             this.delBtn.TabIndex = 10;
-            this.delBtn.Text = "➖";
+            this.delBtn.Text = "◀️◀";
             this.delBtn.UseVisualStyleBackColor = true;
             this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
             // 
             // clrBtn
             // 
             this.clrBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clrBtn.Location = new System.Drawing.Point(431, 339);
+            this.clrBtn.Location = new System.Drawing.Point(431, 380);
             this.clrBtn.Margin = new System.Windows.Forms.Padding(4);
             this.clrBtn.Name = "clrBtn";
             this.clrBtn.Size = new System.Drawing.Size(168, 64);
@@ -175,11 +177,24 @@
             this.clrBtn.UseVisualStyleBackColor = true;
             this.clrBtn.Click += new System.EventHandler(this.clrBtn_Click);
             // 
+            // addAllBtn
+            // 
+            this.addAllBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addAllBtn.Location = new System.Drawing.Point(431, 310);
+            this.addAllBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.addAllBtn.Name = "addAllBtn";
+            this.addAllBtn.Size = new System.Drawing.Size(168, 64);
+            this.addAllBtn.TabIndex = 12;
+            this.addAllBtn.Text = "⏭️";
+            this.addAllBtn.UseVisualStyleBackColor = true;
+            this.addAllBtn.Click += new System.EventHandler(this.addAllBtn_Click);
+            // 
             // RegisterCourse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 648);
+            this.Controls.Add(this.addAllBtn);
             this.Controls.Add(this.clrBtn);
             this.Controls.Add(this.delBtn);
             this.Controls.Add(this.saveBtn);
@@ -215,5 +230,6 @@
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button delBtn;
         private System.Windows.Forms.Button clrBtn;
+        private System.Windows.Forms.Button addAllBtn;
     }
 }

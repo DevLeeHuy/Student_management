@@ -145,7 +145,7 @@ INSERT INTO dbo.Score
     description
 )
 VALUES
-(   18110016,   -- sid - int
+(   1810016,   -- sid - int
     1,   -- cid - int
     NULL, -- stdScore - float
     'chua co diem'   -- description - text
@@ -207,3 +207,4 @@ create table groups(
 select * from groups
 select * from contact
 
+SELECT student.id, avg(stdScore) as 'Average Score' FROM student, Score,course WHERE student.id = Score.sid AND course.id= Score.cid AND course.semester=1 GROUP BY student.id

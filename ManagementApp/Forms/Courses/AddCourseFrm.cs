@@ -17,13 +17,13 @@ namespace ManagementApp.Forms.Courses
         public AddCourseFrm()
         {
             InitializeComponent();
-            //cbSem.Items.Clear();
-            //cbSem.Items.Add("--Select--");
-            //for (int i = 1; i <= 3;i++)
-            //{
-            //    cbSem.Items.Add(i);
-            //}
-            //cbSem.SelectedIndex = 0;
+            cbSem.Items.Clear();
+            cbSem.Items.Add("--Select--");
+            for (int i = 1; i <= 3; i++)
+            {
+                cbSem.Items.Add(i);
+            }
+            cbSem.SelectedIndex = 0;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -34,12 +34,12 @@ namespace ManagementApp.Forms.Courses
                 string label = txtLb.Text;
                 int period = Int32.Parse(txtPr.Text);
                 string des = txtDes.Text;
-                //int semester = cbSem.SelectedItem
-                if(period > 10)
+                int semester = Convert.ToInt32(cbSem.SelectedItem);
+                if (period > 10)
                 {
                     if (!courseDB.courseExist(label))
                     {
-                        course newCourse = new course(id, label, period, des);
+                        course newCourse = new course(id, label, period, des, semester);
                         if (courseDB.insertCourse(newCourse))
                         {
                             MessageBox.Show("Add successfully");

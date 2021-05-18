@@ -21,13 +21,13 @@ namespace ManagementApp.model
         public int Semester { get => semester; set => semester = value; }
 
         public course() { }
-        public course(int id, string label, int period, string description)
+        public course(int id, string label, int period, string description,int semester)
         {
             this.id = id;
             this.label = label;
             this.period = period;
             this.description = description;
-           // this.semester = semester;
+            this.semester = semester;
         }
     }
 }

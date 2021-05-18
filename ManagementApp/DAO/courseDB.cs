@@ -21,6 +21,15 @@ namespace ManagementApp.DAO
             da.Fill(dt);
             return dt;
         }
+        public static DataTable getCourseBySemester(int sem)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM course WHERE semester=@sem", db.getConnection());
+            cmd.Parameters.Add("@sem", SqlDbType.Int).Value = sem;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
 
         public static List<course> getAllCourse()
         {
@@ -43,11 +52,12 @@ namespace ManagementApp.DAO
 
         public static bool insertCourse(course course)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO course VALUES(@id, @lb, @period, @des)", db.getConnection());
+            SqlCommand cmd = new SqlCommand("INSERT INTO course VALUES(@id, @lb, @period, @des, @sem)", db.getConnection());
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = course.Id;
             cmd.Parameters.Add("@lb", SqlDbType.VarChar).Value = course.Label;
             cmd.Parameters.Add("@period", SqlDbType.Int).Value = course.Period ;
             cmd.Parameters.Add("@des", SqlDbType.Text).Value = course.Description;
+            cmd.Parameters.Add("@sem", SqlDbType.Int).Value = course.Semester;
             db.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {
@@ -62,11 +72,12 @@ namespace ManagementApp.DAO
         }
         public static bool updateCourse(course course)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE course SET label = @lb, period = @pr, description=@des WHERE id = @id", db.getConnection());
+            SqlCommand cmd = new SqlCommand("UPDATE course SET label = @lb, period = @pr, description=@des, semester=@sem WHERE id = @id", db.getConnection());
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = course.Id;
             cmd.Parameters.Add("@lb", SqlDbType.VarChar).Value = course.Label;
             cmd.Parameters.Add("@pr", SqlDbType.Int).Value = course.Period;
             cmd.Parameters.Add("@des", SqlDbType.Text).Value = course.Description;
+            cmd.Parameters.Add("@sem", SqlDbType.Int).Value = course.Semester;
             db.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
             {

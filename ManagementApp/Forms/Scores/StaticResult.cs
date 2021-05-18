@@ -17,12 +17,18 @@ namespace ManagementApp.Forms.Scores
         public StaticResult()
         {
             InitializeComponent();
+            cbSem.Items.Clear();
+            for (int i = 1; i <= 3; i++)
+            {
+                cbSem.Items.Add(i);
+            }
+            cbSem.SelectedIndex = 0;
         }
 
         private void StaticResult_Load(object sender, EventArgs e)
         {
-            gvAvgScore.DataSource = scoreDB.avgScore();
-            DataTable result = scoreDB.getListResult();
+            gvAvgScore.DataSource = scoreDB.avgScore();            
+            DataTable result = scoreDB.getListResult(Convert.ToInt32(cbSem.SelectedItem));
             var query = from row in result.AsEnumerable()
                         group row by row.Field<string>("Result") into rs
                         orderby rs.Key
@@ -55,6 +61,15 @@ namespace ManagementApp.Forms.Scores
                         break;
                 }
             }
+        }
+
+        private void cbSem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                StaticResult_Load(sender, e);
+            }
+            catch { }
         }
     }
 }

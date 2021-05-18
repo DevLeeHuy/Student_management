@@ -52,6 +52,8 @@
             this.preBtn = new System.Windows.Forms.Button();
             this.nextBtn = new System.Windows.Forms.Button();
             this.lastBtn = new System.Windows.Forms.Button();
+            this.cbSem = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvListCourse)).BeginInit();
             this.pnTotal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvListStudent)).BeginInit();
@@ -219,6 +221,7 @@
             // 
             // gvListStudent
             // 
+            this.gvListStudent.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.gvListStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvListStudent.Location = new System.Drawing.Point(730, 11);
             this.gvListStudent.Margin = new System.Windows.Forms.Padding(2);
@@ -324,11 +327,35 @@
             this.lastBtn.UseVisualStyleBackColor = false;
             this.lastBtn.Click += new System.EventHandler(this.lastBtn_Click);
             // 
+            // cbSem
+            // 
+            this.cbSem.FormattingEnabled = true;
+            this.cbSem.Location = new System.Drawing.Point(471, 29);
+            this.cbSem.Name = "cbSem";
+            this.cbSem.Size = new System.Drawing.Size(44, 21);
+            this.cbSem.TabIndex = 76;
+            this.cbSem.SelectedIndexChanged += new System.EventHandler(this.cbSem_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(352, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 24);
+            this.label1.TabIndex = 75;
+            this.label1.Text = "Semester: ";
+            // 
             // ManageCourseFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 586);
+            this.Controls.Add(this.cbSem);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lastBtn);
             this.Controls.Add(this.nextBtn);
             this.Controls.Add(this.preBtn);
@@ -392,5 +419,7 @@
         private System.Windows.Forms.Button preBtn;
         private System.Windows.Forms.Button nextBtn;
         private System.Windows.Forms.Button lastBtn;
+        private System.Windows.Forms.ComboBox cbSem;
+        private System.Windows.Forms.Label label1;
     }
 }

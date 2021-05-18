@@ -27,6 +27,12 @@ namespace ManagementApp.Forms.Courses
                 cboxCourse.Items.Add(cou.Id);
             }
             cboxCourse.SelectedIndex = 0;
+            cbSem.Items.Clear();
+            for (int i = 1; i <= 3; i++)
+            {
+                cbSem.Items.Add(i);
+            }
+            cbSem.SelectedIndex = 0;
         }
 
         private void editBtn_Click(object sender, EventArgs e)
@@ -36,7 +42,8 @@ namespace ManagementApp.Forms.Courses
                 string label = txtLb.Text;
                 int period = Convert.ToInt32(nudPr.Value);
                 string des = txtDes.Text;
-                course cou = new course(listCourse[cboxCourse.SelectedIndex - 1].Id, label, period, des);
+                int semester = Convert.ToInt32(cbSem.SelectedItem);
+                course cou = new course(listCourse[cboxCourse.SelectedIndex - 1].Id, label, period, des, semester);
                 if (courseDB.updateCourse(cou))
                 {
                     MessageBox.Show("Update successfully","Successful",MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -74,9 +81,6 @@ namespace ManagementApp.Forms.Courses
             }
         }
 
-        private void EditCourseFrm_Load(object sender, EventArgs e)
-        {
-           
-        }
+
     }
 }

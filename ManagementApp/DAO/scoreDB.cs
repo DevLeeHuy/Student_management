@@ -22,6 +22,39 @@ namespace ManagementApp.DAO
             return dt;
 
         }
+        public static bool exist(int sid, int cid)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT *FROM Score " +
+                                            "WHERE sid = @sid AND cid = @cid", db.getConnection());
+            cmd.Parameters.Add("@sid", SqlDbType.Int).Value = sid;
+            cmd.Parameters.Add("@cid", SqlDbType.Int).Value = cid;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if(dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool addStudy(Score s)
+        {
+            SqlCommand cmd = new SqlCommand("INSERT INTO Score VALUES(@sid,@cid,null,@des)", db.getConnection());
+            cmd.Parameters.Add("@sid", SqlDbType.Int).Value = s.Sid;
+            cmd.Parameters.Add("@cid", SqlDbType.Int).Value = s.Cid;
+            cmd.Parameters.Add("@des", SqlDbType.Text).Value = s.Description;
+            db.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                db.closeConnection();
+                return true;
+            }
+            else
+            {
+                db.closeConnection();
+                return false;
+            }
+        }
         public static bool addScore(Score s)
         {
             SqlCommand cmd = new SqlCommand("UPDATE Score SET stdScore = @score, description = @des WHERE sid=@sid AND cid=@cid", db.getConnection());
@@ -80,25 +113,28 @@ namespace ManagementApp.DAO
 
         public static DataTable getScoreByCid(int cid)
         {
-            SqlCommand cmd = new SqlCommand("SELECT student.id ,stdScore as "+getCnameByCid(cid)+" FROM student LEFT JOIN Score ON student.id = Score.sid AND cid =@cid", db.getConnection());
+            SqlCommand cmd = new SqlCommand("SELECT student.id ,stdScore as '"+getCnameByCid(cid)+"' FROM student LEFT JOIN Score ON student.id = Score.sid AND cid =@cid", db.getConnection());
             cmd.Parameters.Add("@cid", SqlDbType.Int).Value = cid;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
         }
-        public static DataTable getAllStdAvgScore()
+        public static DataTable getAllStdAvgScore(int sem)
         {
-            SqlCommand cmd = new SqlCommand("SELECT student.id, avg(stdScore) as 'Average Score' FROM student LEFT JOIN Score ON student.id = Score.sid GROUP BY student.id", db.getConnection());
+            SqlCommand cmd = new SqlCommand("SELECT student.id, avg(stdScore) as 'Average Score' FROM student, Score,course WHERE student.id = Score.sid" +
+                " AND course.id= Score.cid AND course.semester=@sem GROUP BY student.id ", db.getConnection());
+            cmd.Parameters.Add("@sem", SqlDbType.Int).Value = sem;
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
         }
 
-        public static DataTable getListResult()
+        public static DataTable getListResult(int sem)
         {
-            DataTable listCourse = courseDB.getListCourse();
+            DataTable listCourse = courseDB.getCourseBySemester(sem);
             DataTable rs = new DataTable();
             rs = studentDB.getListStudent();
             for (int i = 3; i < rs.Columns.Count + (i - 3); i++)
@@ -115,7 +151,7 @@ namespace ManagementApp.DAO
                 tables.Add(dt);
             }
             //get average_score && results of student
-            rs = getAllStdAvgScore();
+            rs = getAllStdAvgScore(sem);
             rs.Columns.Add("Result",typeof(string));
             //show result by score
             foreach (DataRow row in rs.Rows)

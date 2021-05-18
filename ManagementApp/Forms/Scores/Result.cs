@@ -10,10 +10,11 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.ComponentModel.DataAnnotations;
 using DevExpress.XtraBars;
+using DevExpress.XtraReports.UI;
 using System.Diagnostics;
 using ManagementApp.DAO;
 using Word = Microsoft.Office.Interop.Word;
-
+using ManagementApp.Forms.Report;
 
 namespace ManagementApp.Forms.Scores
 {
@@ -23,9 +24,21 @@ namespace ManagementApp.Forms.Scores
         public Result()
         {
             InitializeComponent();
-           
-            tbResult = scoreDB.getListResult();
-            gvResult.DataSource = tbResult;           
+            
+            cbSem.Items.Clear();
+            for (int i = 1; i <= 3; i++)
+            {
+                cbSem.Items.Add(i);
+            }
+            cbSem.SelectedIndex = 0;
+            gvResult.DataSource = scoreDB.getListResult(Convert.ToInt32(cbSem.SelectedItem));
+            Binding();
+        }
+        void Binding()
+        {
+            txtId.DataBindings.Add("Text", gvResult.DataSource, "id");
+            txtFname.DataBindings.Add("Text", gvResult.DataSource, "fname");
+            txtLname.DataBindings.Add("Text", gvResult.DataSource, "lname");
         }
         void windowsUIButtonPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
@@ -36,16 +49,24 @@ namespace ManagementApp.Forms.Scores
         }
         void PrintResult()
         {
-            SaveFileDialog sfd = new SaveFileDialog();
+            resultReport report = new resultReport();
 
-            sfd.Filter = "Word Documents (*.docx)|*.docx";
+            report.gridContainer.PrintableComponent = gvResult;
 
-            sfd.FileName = "Result.docx";
+            ReportPrintTool preview = new ReportPrintTool(report);
+            preview.ShowRibbonPreview();
+           
+        }
 
-            if (sfd.ShowDialog() == DialogResult.OK)
+        private void cbSem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
             {
-                gvResult.ExportToDocx(sfd.FileName);
+                gvResult.DataSource = null;
+                gridView1.Columns.Clear();
+                gvResult.DataSource = scoreDB.getListResult(Convert.ToInt32(cbSem.SelectedItem));
             }
+            catch { }
         }
     }
 }
