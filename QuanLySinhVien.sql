@@ -47,7 +47,7 @@ create table student(
 	id INT NOT NULL,
 	lname nvarchar(100) NOT NULL,
 	fname nvarchar(100) NOT NULL,
-	BirthDate nvarchar(100) NOT NULL, 
+	BirthDate datetime NOT NULL, 
 	gender nvarchar(100)  NOT NULL,
 	phone nvarchar(100),
 	address nvarchar(100),
