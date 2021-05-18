@@ -87,15 +87,16 @@ namespace ManagementApp
         private void FindBtn_Click(object sender = null, EventArgs e = null)
         {
             int id = Int32.Parse(txtId.Text);
-            student std = studentDB.getStdById(id);
+            DataRow std = studentDB.getStdById(id);
             if (std != null)
             {
-                txtLname.Text = std.LastName;
-                txtFname.Text = std.FirstName;
-                txtAddress.Text = std.Address;
-                txtPhone.Text = std.Phone;
-                birthPicker.Value = std.BirthDate;
-                if (std.Gender == "male")
+                txtLname.Text = std["lname"].ToString();
+                txtFname.Text = std["fname"].ToString();
+                txtAddress.Text = std["address"].ToString();
+                txtPhone.Text = std["phone"].ToString();
+                DateTime dt = std.Field<DateTime>("BirthDate");
+                birthPicker.Value = dt;
+                if (std["gender"].ToString() == "male")
                 {
                     maleRaBtn.Checked = true;
                 }
@@ -103,7 +104,7 @@ namespace ManagementApp
                 {
                     femaleRaBtn.Checked = true;
                 }
-                Avatar.Image = Image.FromStream(std.Img);
+                Avatar.Image = Image.FromStream(new MemoryStream((byte[])std["img"]));
             }
             else
             {
@@ -111,6 +112,21 @@ namespace ManagementApp
             }
         }
 
-       
+        private void upImgBtn_Click(object sender, EventArgs e)
+        {
+            try{
+                String imageLocation = "";
+                OpenFileDialog dialog = new OpenFileDialog();
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    imageLocation = dialog.FileName;
+                }
+                Avatar.ImageLocation = imageLocation;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Upload image unsuccessfully!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

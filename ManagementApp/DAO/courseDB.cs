@@ -147,5 +147,14 @@ namespace ManagementApp.DAO
             //db.closeConnection();
             return dt;
         }
+        public static DataTable getCourseByStudentId(int id)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT c.id,c.label FROM student s, course c, Score sc WHERE s.id = sc.sid AND c.id=sc.cid AND sc.sid = @id", db.getConnection());
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
     }
 }

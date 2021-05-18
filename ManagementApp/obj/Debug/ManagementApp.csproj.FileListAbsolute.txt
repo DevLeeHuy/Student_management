@@ -441,3 +441,4 @@ C:\Users\Dell\OneDrive\Desktop\Window\ManagementApp\obj\Debug\ManagementApp.cspr
 C:\Users\Dell\OneDrive\Desktop\Window\ManagementApp\obj\Debug\ManagementApp.exe
 C:\Users\Dell\OneDrive\Desktop\Window\ManagementApp\obj\Debug\ManagementApp.pdb
 C:\Users\Dell\OneDrive\Desktop\Window\ManagementApp\obj\Debug\ManagementApp.Forms.Scores.StaticResult.resources
+C:\Users\Dell\OneDrive\Desktop\Window\ManagementApp\obj\Debug\ManagementApp.Forms.Scores.printScore.resources

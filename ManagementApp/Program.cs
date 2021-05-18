@@ -21,7 +21,7 @@ namespace ManagementApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Result());
+            Application.Run(new printScore());
         }
     }
 }

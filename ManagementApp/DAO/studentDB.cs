@@ -25,7 +25,7 @@ namespace ManagementApp
 
         public static bool insertStudent(student stu)
         {
-            SqlCommand cmd = new SqlCommand("INSERT INTO student VALUES(@id, @ln, @fn, @birth, @gender, @phone, @address,@img)", db.getConnection());
+            SqlCommand cmd = new SqlCommand("INSERT INTO student VALUES(@id, @ln, @fn, @gender, @phone, @address,@img, @birth)", db.getConnection());
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = stu.Id;
             cmd.Parameters.Add("@ln", SqlDbType.VarChar).Value = stu.LastName;
             cmd.Parameters.Add("@fn", SqlDbType.VarChar).Value = stu.FirstName;
@@ -88,29 +88,36 @@ namespace ManagementApp
             }
         }
 
-        public static student getStdById(int id)
+        //public static student getStdById(int id)
+        //{
+        //    db.openConnection();
+        //    SqlCommand cmd = new SqlCommand("SELECT * FROM student WHERE id = @id", db.getConnection());
+        //    cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+        //    SqlDataReader dt = cmd.ExecuteReader();
+        //    while (dt.Read())
+        //    {
+        //        string lname = dt.GetValue(1).ToString();
+        //        string fname = dt.GetValue(2).ToString();
+        //        DateTime BirthDate = (DateTime)dt.GetValue(3);
+        //        string gender = dt.GetValue(4).ToString();
+        //        string phone = dt.GetValue(5).ToString();
+        //        string address = dt.GetValue(6).ToString();
+        //        byte[] image = (byte[])dt.GetValue(7);
+        //        MemoryStream img = new MemoryStream(image);
+        //        db.closeConnection();
+        //        return new student(id, fname, lname, BirthDate, phone, address, gender, img);
+        //    }
+        //    db.closeConnection();
+        //    return null;
+        //}
+        public static DataRow getStdById(int id)
         {
-            db.openConnection();
             SqlCommand cmd = new SqlCommand("SELECT * FROM student WHERE id = @id", db.getConnection());
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            SqlDataReader dt = cmd.ExecuteReader();
-            while (dt.Read())
-            {
-                string lname = dt.GetValue(1).ToString();
-                string fname = dt.GetValue(2).ToString();
-                DateTime BirthDate = (DateTime)dt.GetValue(3);
-                string gender = dt.GetValue(4).ToString();
-                string phone = dt.GetValue(5).ToString();
-                string address = dt.GetValue(6).ToString();
-                byte[] image = (byte[])dt.GetValue(7);
-                MemoryStream img = new MemoryStream(image);
-                db.closeConnection();
-                return new student(id, fname, lname, BirthDate, phone, address, gender, img);
-            }
-            db.closeConnection();
-            return null;
-
-
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt.Rows[0];
         }
 
 

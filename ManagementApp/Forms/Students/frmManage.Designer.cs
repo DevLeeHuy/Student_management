@@ -61,10 +61,12 @@
             this.lbTotal = new System.Windows.Forms.Label();
             this.btnDown = new System.Windows.Forms.Button();
             this.addCourseBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.gvCourse = new System.Windows.Forms.DataGridView();
             this.genderBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvListStudent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).BeginInit();
             this.pnTotal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCourse)).BeginInit();
             this.SuspendLayout();
             // 
             // cancelBtn
@@ -335,13 +337,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gvListStudent.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.gvListStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvListStudent.Location = new System.Drawing.Point(430, 44);
+            this.gvListStudent.Location = new System.Drawing.Point(430, 42);
             this.gvListStudent.Margin = new System.Windows.Forms.Padding(2);
             this.gvListStudent.Name = "gvListStudent";
             this.gvListStudent.RowHeadersWidth = 102;
             this.gvListStudent.RowTemplate.Height = 80;
-            this.gvListStudent.Size = new System.Drawing.Size(870, 628);
+            this.gvListStudent.Size = new System.Drawing.Size(553, 628);
             this.gvListStudent.TabIndex = 63;
+            this.gvListStudent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvListStudent_CellContentClick);
             this.gvListStudent.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvListStudent_CellDoubleClick);
             // 
             // Avatar
@@ -387,7 +390,7 @@
             this.pnTotal.BackColor = System.Drawing.Color.RoyalBlue;
             this.pnTotal.Controls.Add(this.lbTotal);
             this.pnTotal.Location = new System.Drawing.Point(430, 674);
-            this.pnTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnTotal.Margin = new System.Windows.Forms.Padding(2);
             this.pnTotal.Name = "pnTotal";
             this.pnTotal.Size = new System.Drawing.Size(206, 50);
             this.pnTotal.TabIndex = 66;
@@ -423,13 +426,28 @@
             this.addCourseBtn.Appearance.Options.UseFont = true;
             this.addCourseBtn.BackgroundImage = global::ManagementApp.Properties.Resources.hand_painted_watercolor_background_with_sky_clouds_shape_24972_1095;
             this.addCourseBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.addCourseBtn.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.addCourseBtn.Location = new System.Drawing.Point(1148, 677);
+            this.addCourseBtn.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("addCourseBtn.ImageOptions.SvgImage")));
+            this.addCourseBtn.Location = new System.Drawing.Point(1140, 677);
             this.addCourseBtn.Name = "addCourseBtn";
             this.addCourseBtn.Size = new System.Drawing.Size(152, 50);
             this.addCourseBtn.TabIndex = 68;
             this.addCourseBtn.Text = "Add course";
             this.addCourseBtn.Click += new System.EventHandler(this.addCourseBtn_Click);
+            // 
+            // gvCourse
+            // 
+            this.gvCourse.AllowUserToAddRows = false;
+            this.gvCourse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gvCourse.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.gvCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvCourse.Location = new System.Drawing.Point(987, 42);
+            this.gvCourse.Margin = new System.Windows.Forms.Padding(2);
+            this.gvCourse.Name = "gvCourse";
+            this.gvCourse.RowHeadersWidth = 102;
+            this.gvCourse.RowTemplate.Height = 80;
+            this.gvCourse.Size = new System.Drawing.Size(305, 630);
+            this.gvCourse.TabIndex = 69;
             // 
             // frmManage
             // 
@@ -438,6 +456,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1304, 793);
+            this.Controls.Add(this.gvCourse);
             this.Controls.Add(this.addCourseBtn);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.pnTotal);
@@ -468,7 +487,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frmManage";
@@ -479,6 +498,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).EndInit();
             this.pnTotal.ResumeLayout(false);
             this.pnTotal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCourse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,5 +538,6 @@
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Button btnDown;
         private DevExpress.XtraEditors.SimpleButton addCourseBtn;
+        private System.Windows.Forms.DataGridView gvCourse;
     }
 }

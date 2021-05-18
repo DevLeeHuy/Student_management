@@ -35,12 +35,14 @@
             // 
             // gvListScore
             // 
+            this.gvListScore.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.gvListScore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvListScore.Location = new System.Drawing.Point(12, 12);
+            this.gvListScore.Location = new System.Drawing.Point(9, 10);
+            this.gvListScore.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gvListScore.Name = "gvListScore";
             this.gvListScore.RowHeadersWidth = 51;
             this.gvListScore.RowTemplate.Height = 24;
-            this.gvListScore.Size = new System.Drawing.Size(591, 316);
+            this.gvListScore.Size = new System.Drawing.Size(443, 257);
             this.gvListScore.TabIndex = 0;
             this.gvListScore.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvListScore_CellClick);
             this.gvListScore.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvListScore_CellDoubleClick);
@@ -49,9 +51,10 @@
             // 
             this.removeBtn.BackColor = System.Drawing.Color.Red;
             this.removeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeBtn.Location = new System.Drawing.Point(203, 349);
+            this.removeBtn.Location = new System.Drawing.Point(152, 284);
+            this.removeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.removeBtn.Name = "removeBtn";
-            this.removeBtn.Size = new System.Drawing.Size(203, 77);
+            this.removeBtn.Size = new System.Drawing.Size(152, 63);
             this.removeBtn.TabIndex = 1;
             this.removeBtn.Text = "Remove";
             this.removeBtn.UseVisualStyleBackColor = false;
@@ -59,11 +62,12 @@
             // 
             // RemoveScore
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 459);
+            this.ClientSize = new System.Drawing.Size(458, 373);
             this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.gvListScore);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RemoveScore";
             this.Text = "RemoveScore";
             ((System.ComponentModel.ISupportInitialize)(this.gvListScore)).EndInit();

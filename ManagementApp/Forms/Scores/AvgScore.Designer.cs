@@ -34,20 +34,23 @@
             // 
             // gvAvgScore
             // 
+            this.gvAvgScore.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.gvAvgScore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvAvgScore.Location = new System.Drawing.Point(12, 12);
+            this.gvAvgScore.Location = new System.Drawing.Point(9, 10);
+            this.gvAvgScore.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gvAvgScore.Name = "gvAvgScore";
             this.gvAvgScore.RowHeadersWidth = 51;
             this.gvAvgScore.RowTemplate.Height = 24;
-            this.gvAvgScore.Size = new System.Drawing.Size(348, 414);
+            this.gvAvgScore.Size = new System.Drawing.Size(261, 336);
             this.gvAvgScore.TabIndex = 0;
             // 
             // AvgScore
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 440);
+            this.ClientSize = new System.Drawing.Size(278, 358);
             this.Controls.Add(this.gvAvgScore);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AvgScore";
             this.Text = "AvgScore";
             this.Load += new System.EventHandler(this.AvgScore_Load);

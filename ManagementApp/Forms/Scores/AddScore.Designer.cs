@@ -46,7 +46,7 @@
             // 
             // txtId
             // 
-            this.txtId.BackColor = System.Drawing.Color.LavenderBlush;
+            this.txtId.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtId.Location = new System.Drawing.Point(230, 22);
@@ -79,7 +79,7 @@
             // 
             // cboxCourse
             // 
-            this.cboxCourse.BackColor = System.Drawing.Color.LavenderBlush;
+            this.cboxCourse.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.cboxCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxCourse.FormattingEnabled = true;
             this.cboxCourse.Location = new System.Drawing.Point(230, 64);
@@ -102,7 +102,7 @@
             // 
             // txtScore
             // 
-            this.txtScore.BackColor = System.Drawing.Color.LavenderBlush;
+            this.txtScore.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtScore.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtScore.Location = new System.Drawing.Point(230, 114);
@@ -112,7 +112,7 @@
             // 
             // txtDes
             // 
-            this.txtDes.BackColor = System.Drawing.Color.LavenderBlush;
+            this.txtDes.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDes.Location = new System.Drawing.Point(230, 155);
             this.txtDes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -135,7 +135,7 @@
             // addBtn
             // 
             this.addBtn.Location = new System.Drawing.Point(270, 292);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(172, 80);
             this.addBtn.TabIndex = 19;
@@ -148,7 +148,7 @@
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.Controls.Add(this.lbStudent);
             this.panel1.Location = new System.Drawing.Point(649, 407);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(206, 50);
             this.panel1.TabIndex = 71;
@@ -170,7 +170,7 @@
             this.gvListStudent.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.gvListStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvListStudent.Location = new System.Drawing.Point(512, 1);
-            this.gvListStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gvListStudent.Margin = new System.Windows.Forms.Padding(2);
             this.gvListStudent.Name = "gvListStudent";
             this.gvListStudent.RowHeadersWidth = 51;
             this.gvListStudent.RowTemplate.Height = 24;
@@ -194,7 +194,7 @@
             this.Controls.Add(this.cboxCourse);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddScore";
             this.Text = "AddScore";
             this.panel1.ResumeLayout(false);

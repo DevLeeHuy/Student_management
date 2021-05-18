@@ -130,6 +130,12 @@
     <Compile Include="Forms\Report\resultReport.Designer.cs">
       <DependentUpon>resultReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Scores\printScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Scores\printScore.Designer.cs">
+      <DependentUpon>printScore.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Scores\RemoveScore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Report\resultReport.resx">
       <DependentUpon>resultReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Scores\printScore.resx">
+      <DependentUpon>printScore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Scores\RemoveScore.resx">
       <DependentUpon>RemoveScore.cs</DependentUpon>

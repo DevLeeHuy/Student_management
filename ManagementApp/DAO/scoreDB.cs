@@ -120,6 +120,26 @@ namespace ManagementApp.DAO
             da.Fill(dt);
             return dt;
         }
+        public static DataTable getScoreBySid(int sid)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT s.id, s.fname,s.lname,c.id,c.label,sc.stdScore FROM student s, course c, Score sc WHERE sc.sid = s.id AND " +
+                "sc.cid = c.id AND sc.sid = @sid", db.getConnection());
+            cmd.Parameters.Add("@sid", SqlDbType.Int).Value = sid;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+        public static DataTable getScoreByCourseId(int cid)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT s.id, s.fname,s.lname,c.id,c.label,sc.stdScore FROM student s, course c, Score sc WHERE sc.sid = s.id AND " +
+                "sc.cid = c.id AND sc.cid = @cid", db.getConnection());
+            cmd.Parameters.Add("@cid", SqlDbType.Int).Value = cid;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
         public static DataTable getAllStdAvgScore(int sem)
         {
             SqlCommand cmd = new SqlCommand("SELECT student.id, avg(stdScore) as 'Average Score' FROM student, Score,course WHERE student.id = Score.sid" +

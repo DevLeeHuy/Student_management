@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ManagementApp.DAO;
 using ManagementApp.Forms.Register_Course;
 
 namespace ManagementApp.Forms
@@ -23,15 +24,15 @@ namespace ManagementApp.Forms
         private void FindBtn_Click(object sender, EventArgs e)
         {
             int id = Int32.Parse(txtId.Text);
-            student std = studentDB.getStdById(id);
+            DataRow std = studentDB.getStdById(id);
             if (std != null)
             {
-                txtLname.Text = std.LastName;
-                txtFname.Text = std.FirstName;
-                txtAddress.Text = std.Address;
-                txtPhone.Text = std.Phone;
-                birthPicker.Value = std.BirthDate;
-                if (std.Gender == "male")
+                txtLname.Text = std["lname"].ToString();
+                txtFname.Text = std["fname"].ToString();
+                txtAddress.Text = std["address"].ToString();
+                txtPhone.Text = std["phone"].ToString();
+                birthPicker.Value = std.Field<DateTime>("BirthDate");
+                if (std["gender"].ToString() == "male")
                 {
                     maleRaBtn.Checked = true;
                 }
@@ -39,7 +40,7 @@ namespace ManagementApp.Forms
                 {
                     femaleRaBtn.Checked = true;
                 }
-                Avatar.Image = Image.FromStream(std.Img);
+                Avatar.Image = Image.FromStream(new MemoryStream((byte[])std["img"]));
             }
             else
             {
@@ -151,6 +152,7 @@ namespace ManagementApp.Forms
 
         private void gvListStudent_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            gvCourse.DataSource = courseDB.getCourseByStudentId(Convert.ToInt32(gvListStudent.CurrentRow.Cells[0].Value));
             txtId.Text = gvListStudent.CurrentRow.Cells[0].Value.ToString();
             FindBtn_Click(null, null);
         }
@@ -210,6 +212,7 @@ namespace ManagementApp.Forms
 
         private void frmManage_Load(object sender, EventArgs e)
         {
+            showListStudent(studentDB.getListStudent());
             showTotalStd();
         }
         void showTotalStd()
@@ -241,6 +244,11 @@ namespace ManagementApp.Forms
         {
             Form addCourse = new RegisterCourse();
             addCourse.ShowDialog();
+        }
+
+        private void gvListStudent_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
